@@ -22,8 +22,9 @@ class ConnectionManager:
         websocket: WebSocket,
         allowed_event_types: Optional[Set[str]] = None,
         tenant_id: Optional[str] = None,
+        subprotocol: Optional[str] = None,
     ):
-        await websocket.accept()
+        await websocket.accept(subprotocol=subprotocol)
         self.active_connections.append(websocket)
         if allowed_event_types is None:
             self._allowed_event_types[websocket] = {"query", "file_scan", "spam_check", "alert"}

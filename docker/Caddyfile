@@ -1,0 +1,21 @@
+{
+	email {$ACME_EMAIL}
+	admin off
+}
+
+{$APP_DOMAIN} {
+	encode zstd gzip
+
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "no-referrer"
+		-Server
+	}
+
+	# Caddy terminates TLS. Nginx relays this value to FastAPI so the
+	# application retains the original request scheme.
+	reverse_proxy frontend:8080 {
+		header_up X-Forwarded-Proto {scheme}
+	}
+}

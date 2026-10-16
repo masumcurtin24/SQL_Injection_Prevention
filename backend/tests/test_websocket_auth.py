@@ -3,6 +3,13 @@ import json
 from starlette.websockets import WebSocketDisconnect
 
 
+def _ws_subprotocols(access_token: str, step_up_token: str | None = None) -> list[str]:
+    protocols = ["sqliprev.v1", f"sqliprev.access.{access_token}"]
+    if step_up_token:
+        protocols.append(f"sqliprev.stepup.{step_up_token}")
+    return protocols
+
+
 def _admin_token(client) -> str:
     login = client.post(
         "/api/v1/auth/login",
@@ -37,9 +44,12 @@ def test_websocket_rejects_without_token(client):
     assert excinfo.value.code == 1008
 
 
-def test_websocket_rejects_invalid_token(client):
+def test_websocket_rejects_invalid_subprotocol_token(client):
     with pytest.raises(WebSocketDisconnect) as excinfo:
-        with client.websocket_connect("/api/v1/ws/updates?token=this-is-not-valid"):
+        with client.websocket_connect(
+            "/api/v1/ws/updates",
+            subprotocols=_ws_subprotocols("this-is-not-valid"),
+        ):
             pass
     assert excinfo.value.code == 1008
 
@@ -47,7 +57,11 @@ def test_websocket_rejects_invalid_token(client):
 def test_websocket_accepts_valid_token(client):
     token = _admin_token(client)
 
-    with client.websocket_connect(f"/api/v1/ws/updates?token={token}") as websocket:
+    with client.websocket_connect(
+        "/api/v1/ws/updates",
+        subprotocols=_ws_subprotocols(token),
+    ) as websocket:
+        assert websocket.accepted_subprotocol == "sqliprev.v1"
         first = json.loads(websocket.receive_text())
         if first.get("type") == "ws.auth.notice":
             session = json.loads(websocket.receive_text())
@@ -60,7 +74,8 @@ def test_websocket_accepts_valid_token(client):
 def test_websocket_viewer_cannot_subscribe_to_alert_stream(client):
     token, _ = _create_user_and_login(client, role="viewer")
     with client.websocket_connect(
-        f"/api/v1/ws/updates?token={token}&event_types=query,file_scan,spam_check,alert"
+        "/api/v1/ws/updates?event_types=query,file_scan,spam_check,alert",
+        subprotocols=_ws_subprotocols(token),
     ) as websocket:
         session = json.loads(websocket.receive_text())
         assert session.get("type") == "ws.session"
@@ -70,7 +85,8 @@ def test_websocket_viewer_cannot_subscribe_to_alert_stream(client):
 def test_websocket_alert_subscription_requires_step_up(client):
     token = _admin_token(client)
     with client.websocket_connect(
-        f"/api/v1/ws/updates?token={token}&event_types=query,file_scan,spam_check,alert"
+        "/api/v1/ws/updates?event_types=query,file_scan,spam_check,alert",
+        subprotocols=_ws_subprotocols(token),
     ) as websocket:
         notice = json.loads(websocket.receive_text())
         session = json.loads(websocket.receive_text())
@@ -91,8 +107,32 @@ def test_websocket_alert_subscription_accepts_valid_step_up(client):
     step_up_token = step_up.json()["step_up_token"]
 
     with client.websocket_connect(
-        f"/api/v1/ws/updates?token={token}&event_types=query,file_scan,spam_check,alert&step_up_token={step_up_token}"
+        "/api/v1/ws/updates?event_types=query,file_scan,spam_check,alert",
+        subprotocols=_ws_subprotocols(token, step_up_token),
     ) as websocket:
         session = json.loads(websocket.receive_text())
         assert session.get("type") == "ws.session"
         assert "alert" in set(session.get("event_types") or [])
+
+
+def test_websocket_rejects_query_token_by_default(client, monkeypatch):
+    monkeypatch.delenv("WS_ALLOW_LEGACY_QUERY_AUTH", raising=False)
+    token = _admin_token(client)
+
+    with pytest.raises(WebSocketDisconnect) as excinfo:
+        with client.websocket_connect(f"/api/v1/ws/updates?token={token}"):
+            pass
+
+    assert excinfo.value.code == 1008
+
+
+def test_websocket_legacy_query_token_requires_explicit_opt_in(client, monkeypatch):
+    monkeypatch.setenv("WS_ALLOW_LEGACY_QUERY_AUTH", "true")
+    token = _admin_token(client)
+
+    with client.websocket_connect(f"/api/v1/ws/updates?token={token}") as websocket:
+        first = json.loads(websocket.receive_text())
+        if first.get("type") == "ws.auth.notice":
+            first = json.loads(websocket.receive_text())
+        assert first.get("type") == "ws.session"
+        assert websocket.accepted_subprotocol is None

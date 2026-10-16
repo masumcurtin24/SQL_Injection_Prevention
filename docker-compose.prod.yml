@@ -1,0 +1,72 @@
+services:
+  backend:
+    environment:
+      CORS_ORIGINS: "https://${APP_DOMAIN:?Set APP_DOMAIN in .env.production}"
+      # Keep automated model changes off for the first public demo. The
+      # production-specific variables make enabling either feature deliberate.
+      DEFENDER_SPAM_AUTO_RETRAIN_ENABLED: "${PROD_DEFENDER_SPAM_AUTO_RETRAIN_ENABLED:-false}"
+      SPAM_AUTOPIPELINE_ENABLED: "${PROD_SPAM_AUTOPIPELINE_ENABLED:-false}"
+      SPAM_AUTOPIPELINE_RUN_ON_START: "${PROD_SPAM_AUTOPIPELINE_RUN_ON_START:-false}"
+    cpus: 2.0
+    mem_limit: 3g
+    pids_limit: 512
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  frontend:
+    # Compose's !override tag replaces (rather than appends to) the development
+    # port mapping. Only local diagnostics and SSH tunnels can reach this port.
+    ports: !override
+      - target: 8080
+        published: "${LOCAL_APP_PORT:-3000}"
+        host_ip: 127.0.0.1
+        protocol: tcp
+    cpus: 0.5
+    mem_limit: 256m
+    pids_limit: 128
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      frontend:
+        condition: service_healthy
+    environment:
+      APP_DOMAIN: "${APP_DOMAIN:?Set APP_DOMAIN in .env.production}"
+      ACME_EMAIL: "${ACME_EMAIL:?Set ACME_EMAIL in .env.production}"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - type: bind
+        source: ./docker/Caddyfile
+        target: /etc/caddy/Caddyfile
+        read_only: true
+      - caddy-data:/data
+      - caddy-config:/config
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cpus: 0.5
+    mem_limit: 256m
+    pids_limit: 128
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  caddy-data:
+  caddy-config:

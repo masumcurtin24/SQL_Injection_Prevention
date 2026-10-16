@@ -1,6 +1,8 @@
 # backend/server/routers/websockets_router.py (Corrected)
 import asyncio
 import json
+import logging
+import os
 import time
 
 import jwt
@@ -16,10 +18,88 @@ from backend.server.websockets import manager
 from backend.utils.telemetry import telemetry
 
 router = APIRouter()
+logger = logging.getLogger(__name__)
 _WS_EVENT_TYPES = ("query", "file_scan", "spam_check", "alert")
 _WS_DEFAULT_USER_TYPES = {"query", "file_scan", "spam_check"}
 _WS_DEFAULT_PRIVILEGED_TYPES = {"query", "file_scan", "spam_check", "alert"}
 _PRIVILEGED_ROLES = {"analyst", "admin"}
+_WS_APPLICATION_SUBPROTOCOL = "sqliprev.v1"
+_WS_ACCESS_TOKEN_SUBPROTOCOL_PREFIX = "sqliprev.access."
+_WS_STEP_UP_TOKEN_SUBPROTOCOL_PREFIX = "sqliprev.stepup."
+
+
+def _legacy_ws_query_auth_enabled() -> bool:
+    return str(os.getenv("WS_ALLOW_LEGACY_QUERY_AUTH", "false")).strip().lower() in {
+        "1",
+        "true",
+        "yes",
+        "on",
+    }
+
+
+def _extract_ws_auth(
+    websocket: WebSocket,
+) -> tuple[str | None, str | None, str | None, str | None]:
+    """Read browser-compatible auth from WebSocket subprotocol values.
+
+    The server negotiates only the static application protocol, so credentials
+    are never echoed back in the handshake. Query-string auth remains available
+    only behind an explicit, deprecated compatibility flag because URLs are
+    routinely captured by access logs and monitoring systems.
+    """
+
+    offered_protocols = tuple(
+        str(value or "").strip()
+        for value in websocket.scope.get("subprotocols", [])
+        if str(value or "").strip()
+    )
+    access_tokens = [
+        value[len(_WS_ACCESS_TOKEN_SUBPROTOCOL_PREFIX) :]
+        for value in offered_protocols
+        if value.startswith(_WS_ACCESS_TOKEN_SUBPROTOCOL_PREFIX)
+    ]
+    step_up_tokens = [
+        value[len(_WS_STEP_UP_TOKEN_SUBPROTOCOL_PREFIX) :]
+        for value in offered_protocols
+        if value.startswith(_WS_STEP_UP_TOKEN_SUBPROTOCOL_PREFIX)
+    ]
+    if len(access_tokens) > 1 or len(step_up_tokens) > 1:
+        return None, None, None, "ambiguous_subprotocol_auth"
+    if (access_tokens or step_up_tokens) and _WS_APPLICATION_SUBPROTOCOL not in offered_protocols:
+        return None, None, None, "missing_application_subprotocol"
+
+    query_auth_present = (
+        "token" in websocket.query_params or "step_up_token" in websocket.query_params
+    )
+    if query_auth_present:
+        if access_tokens or step_up_tokens:
+            return None, None, None, "mixed_auth_transports"
+        if not _legacy_ws_query_auth_enabled():
+            return None, None, None, "query_auth_disabled"
+        logger.warning(
+            "Deprecated WebSocket query-string authentication was used; "
+            "migrate the client to Sec-WebSocket-Protocol authentication."
+        )
+        return (
+            str(websocket.query_params.get("token") or "").strip() or None,
+            str(websocket.query_params.get("step_up_token") or "").strip() or None,
+            None,
+            None,
+        )
+
+    access_token = access_tokens[0].strip() if access_tokens else ""
+    step_up_token = step_up_tokens[0].strip() if step_up_tokens else ""
+    negotiated_subprotocol = (
+        _WS_APPLICATION_SUBPROTOCOL
+        if _WS_APPLICATION_SUBPROTOCOL in offered_protocols
+        else None
+    )
+    return (
+        access_token or None,
+        step_up_token or None,
+        negotiated_subprotocol,
+        None,
+    )
 
 
 def _normalize_ws_event_types(raw: str | None, role: str) -> set[str]:
@@ -104,8 +184,8 @@ async def websocket_endpoint(websocket: WebSocket):
     Handles the WebSocket connection. This endpoint is for broadcasting
     server-side updates to all connected clients.
     """
-    token = websocket.query_params.get("token")
-    if not token:
+    token, step_up_token, negotiated_subprotocol, auth_transport_error = _extract_ws_auth(websocket)
+    if auth_transport_error or not token:
         telemetry.record_ws_auth_failure()
         await websocket.close(code=1008)
         return
@@ -184,7 +264,6 @@ async def websocket_endpoint(websocket: WebSocket):
     notice_payload: dict | None = None
 
     if "alert" in effective_event_types:
-        step_up_token = str(websocket.query_params.get("step_up_token") or "").strip() or None
         is_authorized, reason = _validate_alert_subscription_step_up(
             user_id=user_id,
             user_role=role,
@@ -200,7 +279,12 @@ async def websocket_endpoint(websocket: WebSocket):
 
     websocket.state.user = {"id": user.id, "email": user.email, "role": user.role, "tenant_id": tenant_id}
     websocket.state.allowed_event_types = sorted(effective_event_types)
-    await manager.connect(websocket, allowed_event_types=effective_event_types, tenant_id=tenant_id)
+    await manager.connect(
+        websocket,
+        allowed_event_types=effective_event_types,
+        tenant_id=tenant_id,
+        subprotocol=negotiated_subprotocol,
+    )
     if notice_payload is not None:
         await websocket.send_text(json.dumps(notice_payload))
     await websocket.send_text(

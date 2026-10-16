@@ -37,6 +37,8 @@ except Exception as e:
     print(f"ERROR (Alembic env.py): Could not configure paths or load .env: {e}")
 # --- End Custom Setup ---
 
+from backend.core.database_url import sanitize_database_url
+
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -57,14 +59,23 @@ if DATABASE_URL_FROM_ENV:
         relative_db_path = DATABASE_URL_FROM_ENV.split("sqlite:///./", 1)[1]
         abs_db_path = os.path.join(PROJECT_ROOT_FOR_ALEMBIC, relative_db_path)
         resolved_db_url = f"sqlite:///{abs_db_path}"
-        print(f"INFO (Alembic env.py): Resolved relative SQLite DATABASE_URL to: {resolved_db_url}")
+        print(
+            "INFO (Alembic env.py): Resolved relative SQLite DATABASE_URL to: "
+            f"{sanitize_database_url(resolved_db_url)}"
+        )
         config.set_main_option("sqlalchemy.url", resolved_db_url)
     elif DATABASE_URL_FROM_ENV.startswith("sqlite:///"): # Absolute SQLite path
         config.set_main_option("sqlalchemy.url", DATABASE_URL_FROM_ENV)
-        print(f"INFO (Alembic env.py): Using absolute SQLite DATABASE_URL from env: {DATABASE_URL_FROM_ENV}")
+        print(
+            "INFO (Alembic env.py): Using absolute SQLite DATABASE_URL from env: "
+            f"{sanitize_database_url(DATABASE_URL_FROM_ENV)}"
+        )
     else: # For other database types like PostgreSQL, use the URL as is
         config.set_main_option("sqlalchemy.url", DATABASE_URL_FROM_ENV)
-        print(f"INFO (Alembic env.py): Using DATABASE_URL from env: {DATABASE_URL_FROM_ENV}")
+        print(
+            "INFO (Alembic env.py): Using DATABASE_URL from env: "
+            f"{sanitize_database_url(DATABASE_URL_FROM_ENV)}"
+        )
 else:
     print("WARNING (Alembic env.py): DATABASE_URL not found in environment. "
           "Alembic will rely on sqlalchemy.url from alembic.ini (if set).")
@@ -76,7 +87,7 @@ else:
 # --- Import your Base and models ---
 try:
     from backend.core.database import Base as AppBase  # Import your Base from your application's database.py
-    from backend.core import models  # Import your models.py to register all your tables with AppBase
+    from backend.core import models  # noqa: F401 - register model metadata with AppBase
     target_metadata = AppBase.metadata
     print("INFO (Alembic env.py): Successfully imported Base and models for autogenerate support.")
 except ImportError as e:

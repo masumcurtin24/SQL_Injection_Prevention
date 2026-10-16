@@ -131,6 +131,10 @@ docker compose down
 
 The `backend-runtime` volume retains the SQLite database across ordinary container restarts and `docker compose down`.
 
+For a provider-neutral single-VPS deployment with automatic HTTPS, persistent
+Caddy state, loopback-only direct frontend access, and backup/update/rollback
+procedures, see [Single-VPS production deployment](docs/single-vps-deployment.md).
+
 ### Backend Setup
 
 From the repository root:
@@ -231,6 +235,12 @@ python backend/scripts/run_benchmark_harness.py --domain all --disable-transform
 | Alerts | `GET /api/v1/alerts` |
 | Acknowledge alert | `PATCH /api/v1/alerts/{id}/acknowledge` |
 | WebSocket updates | `ws://localhost:8000/api/v1/ws/updates` |
+
+Browser WebSocket clients send access and step-up credentials through the
+`Sec-WebSocket-Protocol` handshake header, not the URL. Query-string token
+authentication is deprecated and disabled by default because URLs are commonly
+captured in access logs. `WS_ALLOW_LEGACY_QUERY_AUTH=true` is available only as
+a temporary migration aid.
 
 ## Models and Data
 

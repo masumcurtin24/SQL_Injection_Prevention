@@ -7,6 +7,8 @@ import sys # Ensure sys is imported for path manipulation if used by logger in o
 from dotenv import load_dotenv
 import logging # For path setup logger
 
+from backend.core.database_url import sanitize_database_url
+
 # --- Basic Logger Setup specifically for this file's path logic ---
 _db_path_logger = logging.getLogger("DatabasePathSetup")
 if not _db_path_logger.handlers:
@@ -50,18 +52,27 @@ if SQLALCHEMY_DATABASE_URL is None:
     else:
         # If project root couldn't be determined, place it in backend/core/ (less ideal)
         db_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), db_filename)
-        _db_path_logger.warning(f"Database.py: PROJECT_ROOT not found, defaulting DB to service script dir.")
+        _db_path_logger.warning("Database.py: PROJECT_ROOT not found, defaulting DB to service script dir.")
 
     SQLALCHEMY_DATABASE_URL = f"sqlite:///{db_path}"
-    _db_path_logger.warning(f"Database.py: DATABASE_URL not found in .env file. Defaulting to SQLite at: {SQLALCHEMY_DATABASE_URL}")
+    _db_path_logger.warning(
+        "Database.py: DATABASE_URL not found in .env file. Defaulting to SQLite at: %s",
+        sanitize_database_url(SQLALCHEMY_DATABASE_URL),
+    )
 else:
     if SQLALCHEMY_DATABASE_URL.startswith("sqlite:///./") and PROJECT_ROOT:
         relative_db_path = SQLALCHEMY_DATABASE_URL.split("sqlite:///./", 1)[1]
         db_path = os.path.join(PROJECT_ROOT, relative_db_path)
         SQLALCHEMY_DATABASE_URL = f"sqlite:///{db_path}"
-        _db_path_logger.info(f"Database.py: Relative SQLite DATABASE_URL resolved to: {SQLALCHEMY_DATABASE_URL}")
+        _db_path_logger.info(
+            "Database.py: Relative SQLite DATABASE_URL resolved to: %s",
+            sanitize_database_url(SQLALCHEMY_DATABASE_URL),
+        )
     else:
-        _db_path_logger.info(f"Database.py: Using DATABASE_URL from .env: {SQLALCHEMY_DATABASE_URL}")
+        _db_path_logger.info(
+            "Database.py: Using DATABASE_URL from .env: %s",
+            sanitize_database_url(SQLALCHEMY_DATABASE_URL),
+        )
 
 
 engine_args = {}

@@ -19,6 +19,9 @@ import type { WSStatus } from './webSocketContextBase';
 const ADMIN_ROLES = new Set(['admin', 'analyst']);
 const USER_EVENT_TYPES = 'query,file_scan,spam_check';
 const ADMIN_EVENT_TYPES = 'query,file_scan,spam_check,alert';
+const WS_APPLICATION_SUBPROTOCOL = 'sqliprev.v1';
+const WS_ACCESS_TOKEN_SUBPROTOCOL_PREFIX = 'sqliprev.access.';
+const WS_STEP_UP_TOKEN_SUBPROTOCOL_PREFIX = 'sqliprev.stepup.';
 
 type LiveFeedScope = {
     isAdmin: boolean;
@@ -87,7 +90,7 @@ export const WebSocketProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     const { showNotification } = useNotification();
 
     useEffect(() => {
-        const buildUrls = () => {
+        const buildTargets = () => {
             const token = getAccessToken();
             if (!token) return [];
             const scope = getLiveFeedScope();
@@ -104,11 +107,16 @@ export const WebSocketProvider: React.FC<{ children: React.ReactNode }> = ({ chi
                 }
             }
             const params = new URLSearchParams();
-            params.set('token', token);
             params.set('event_types', effectiveEventTypes);
             if (tenantId) params.set('tenant_id', tenantId);
-            if (stepUpToken) params.set('step_up_token', stepUpToken);
             const encodedQuery = params.toString();
+            const protocols = [
+                WS_APPLICATION_SUBPROTOCOL,
+                `${WS_ACCESS_TOKEN_SUBPROTOCOL_PREFIX}${token}`,
+            ];
+            if (stepUpToken) {
+                protocols.push(`${WS_STEP_UP_TOKEN_SUBPROTOCOL_PREFIX}${stepUpToken}`);
+            }
             try {
                 const resolvedApiBase = /^https?:\/\//i.test(API_BASE_URL)
                     ? API_BASE_URL
@@ -116,29 +124,36 @@ export const WebSocketProvider: React.FC<{ children: React.ReactNode }> = ({ chi
                 const apiUrl = new URL(resolvedApiBase);
                 const wsProtocol = apiUrl.protocol === 'https:' ? 'wss:' : 'ws:';
                 const wsPath = apiUrl.pathname.replace(/\/+$/, '');
-                return [`${wsProtocol}//${apiUrl.host}${wsPath}/ws/updates?${encodedQuery}`];
+                return [{
+                    url: `${wsProtocol}//${apiUrl.host}${wsPath}/ws/updates?${encodedQuery}`,
+                    protocols,
+                }];
             } catch {
-                return [`ws://localhost:8000/api/v1/ws/updates?${encodedQuery}`];
+                return [{
+                    url: `ws://localhost:8000/api/v1/ws/updates?${encodedQuery}`,
+                    protocols,
+                }];
             }
         };
-        let urls = buildUrls();
+        let targets = buildTargets();
         let urlIndex = 0;
         let reconnectAttempts = 0;
         let shouldReconnect = true;
         const nextDelay = () => Math.min(30000, 1000 * Math.pow(2, reconnectAttempts));
         const connect = () => {
             if (!shouldReconnect) return;
-            urls = buildUrls();
-            if (urls.length === 0) {
+            targets = buildTargets();
+            if (targets.length === 0) {
                 setStatus('disconnected');
                 return;
             }
             try {
-                ws.current = new WebSocket(urls[urlIndex]);
+                const target = targets[urlIndex];
+                ws.current = new WebSocket(target.url, target.protocols);
                 setStatus('connecting');
             } catch {
                 // Schedule reconnect using backoff.
-                urlIndex = (urlIndex + 1) % urls.length;
+                urlIndex = (urlIndex + 1) % targets.length;
                 reconnectAttempts += 1;
                 setTimeout(connect, nextDelay());
                 return;
@@ -238,7 +253,7 @@ export const WebSocketProvider: React.FC<{ children: React.ReactNode }> = ({ chi
                     showNotification('Real-time connection lost. Reconnecting...', 'error');
                 }
                 // Cycle URL index (list usually has one canonical URL).
-                urlIndex = (urlIndex + 1) % urls.length;
+                urlIndex = (urlIndex + 1) % targets.length;
                 reconnectAttempts += 1;
                 setTimeout(connect, nextDelay());
                 setStatus('disconnected');
