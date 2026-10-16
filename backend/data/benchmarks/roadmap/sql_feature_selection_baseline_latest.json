@@ -1,0 +1,242 @@
+{
+  "status": "ok",
+  "generated_at": "2026-04-09T16:42:58.051782+00:00",
+  "dataset": {
+    "sql_corpus": "C:\\backup 10-10-25\\04-17am updates\\SQL_Injection_Prevention\\backend\\data\\corpus\\sql\\processed\\sql_corpus_latest.csv",
+    "context_corpus": "C:\\backup 10-10-25\\04-17am updates\\SQL_Injection_Prevention\\backend\\data\\corpus\\sql\\raw\\sql_request_response_context_latest.csv",
+    "include_context": true,
+    "rows": 1060,
+    "train_rows": 848,
+    "test_rows": 212,
+    "label_distribution": {
+      "0": 734,
+      "1": 326
+    },
+    "source_distribution": {
+      "sql_corpus_latest": 1012,
+      "sql_request_response_context": 48
+    }
+  },
+  "params": {
+    "k_features": 3000,
+    "test_size": 0.2,
+    "random_state": 42,
+    "vectorizer": "TfidfVectorizer(char_wb, ngram=(3,5), min_df=2)",
+    "classifier": "LogisticRegression(liblinear, class_weight=balanced)"
+  },
+  "metrics": {
+    "confusion_matrix": {
+      "tp": 64,
+      "fp": 2,
+      "tn": 145,
+      "fn": 1
+    },
+    "precision": 0.9697,
+    "recall": 0.9846,
+    "f1": 0.9771,
+    "false_positive_rate": 0.0136,
+    "support": 212
+  },
+  "top_features": [
+    {
+      "feature": "or ",
+      "coefficient": 0.759165,
+      "importance_abs": 0.759165
+    },
+    {
+      "feature": "ce:p",
+      "coefficient": 0.742272,
+      "importance_abs": 0.742272
+    },
+    {
+      "feature": "e:p",
+      "coefficient": 0.742272,
+      "importance_abs": 0.742272
+    },
+    {
+      "feature": "ice:p",
+      "coefficient": 0.742272,
+      "importance_abs": 0.742272
+    },
+    {
+      "feature": "ena",
+      "coefficient": -0.741382,
+      "importance_abs": 0.741382
+    },
+    {
+      "feature": "sta",
+      "coefficient": -0.73842,
+      "importance_abs": 0.73842
+    },
+    {
+      "feature": "nan",
+      "coefficient": -0.737576,
+      "importance_abs": 0.737576
+    },
+    {
+      "feature": "enan",
+      "coefficient": -0.731869,
+      "importance_abs": 0.731869
+    },
+    {
+      "feature": "enant",
+      "coefficient": -0.731869,
+      "importance_abs": 0.731869
+    },
+    {
+      "feature": "nant",
+      "coefficient": -0.731869,
+      "importance_abs": 0.731869
+    },
+    {
+      "feature": "ten",
+      "coefficient": -0.731869,
+      "importance_abs": 0.731869
+    },
+    {
+      "feature": "tena",
+      "coefficient": -0.731869,
+      "importance_abs": 0.731869
+    },
+    {
+      "feature": "tenan",
+      "coefficient": -0.731869,
+      "importance_abs": 0.731869
+    },
+    {
+      "feature": "atu",
+      "coefficient": -0.725956,
+      "importance_abs": 0.725956
+    },
+    {
+      "feature": ":pu",
+      "coefficient": 0.719513,
+      "importance_abs": 0.719513
+    },
+    {
+      "feature": ":pub",
+      "coefficient": 0.719513,
+      "importance_abs": 0.719513
+    },
+    {
+      "feature": ":publ",
+      "coefficient": 0.719513,
+      "importance_abs": 0.719513
+    },
+    {
+      "feature": "blic_",
+      "coefficient": 0.719513,
+      "importance_abs": 0.719513
+    },
+    {
+      "feature": "ce:pu",
+      "coefficient": 0.719513,
+      "importance_abs": 0.719513
+    },
+    {
+      "feature": "e:pu",
+      "coefficient": 0.719513,
+      "importance_abs": 0.719513
+    },
+    {
+      "feature": "e:pub",
+      "coefficient": 0.719513,
+      "importance_abs": 0.719513
+    },
+    {
+      "feature": "ic_",
+      "coefficient": 0.719513,
+      "importance_abs": 0.719513
+    },
+    {
+      "feature": "lic_",
+      "coefficient": 0.719513,
+      "importance_abs": 0.719513
+    },
+    {
+      "feature": "bli",
+      "coefficient": 0.70729,
+      "importance_abs": 0.70729
+    },
+    {
+      "feature": "blic",
+      "coefficient": 0.70729,
+      "importance_abs": 0.70729
+    },
+    {
+      "feature": "pub",
+      "coefficient": 0.70729,
+      "importance_abs": 0.70729
+    },
+    {
+      "feature": "publ",
+      "coefficient": 0.70729,
+      "importance_abs": 0.70729
+    },
+    {
+      "feature": "publi",
+      "coefficient": 0.70729,
+      "importance_abs": 0.70729
+    },
+    {
+      "feature": "ubl",
+      "coefficient": 0.70729,
+      "importance_abs": 0.70729
+    },
+    {
+      "feature": "ubli",
+      "coefficient": 0.70729,
+      "importance_abs": 0.70729
+    },
+    {
+      "feature": "ublic",
+      "coefficient": 0.70729,
+      "importance_abs": 0.70729
+    },
+    {
+      "feature": "atus",
+      "coefficient": -0.701179,
+      "importance_abs": 0.701179
+    },
+    {
+      "feature": "stat",
+      "coefficient": -0.701179,
+      "importance_abs": 0.701179
+    },
+    {
+      "feature": "statu",
+      "coefficient": -0.701179,
+      "importance_abs": 0.701179
+    },
+    {
+      "feature": "tat",
+      "coefficient": -0.701179,
+      "importance_abs": 0.701179
+    },
+    {
+      "feature": "tatu",
+      "coefficient": -0.701179,
+      "importance_abs": 0.701179
+    },
+    {
+      "feature": "tatus",
+      "coefficient": -0.701179,
+      "importance_abs": 0.701179
+    },
+    {
+      "feature": "tus",
+      "coefficient": -0.701179,
+      "importance_abs": 0.701179
+    },
+    {
+      "feature": "ant",
+      "coefficient": -0.699765,
+      "importance_abs": 0.699765
+    },
+    {
+      "feature": " or ",
+      "coefficient": 0.680085,
+      "importance_abs": 0.680085
+    }
+  ]
+}

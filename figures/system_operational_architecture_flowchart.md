@@ -1,0 +1,90 @@
+# System Operational Architecture Flowchart
+
+This flowchart summarises how the implemented project operates at runtime. It is based on the repository structure, backend routers and services, frontend pages, database models, model/rule assets, and benchmark evidence.
+
+```mermaid
+flowchart TB
+    U[User or Supervisor Browser]
+
+    subgraph FE[Frontend - React, TypeScript, Vite]
+        UI[Security Console UI]
+        Pages[Dashboard, SQL, File, Email, Alerts, Cases, Policies]
+        Client[API Client and WebSocket Client]
+    end
+
+    subgraph API[Backend API - FastAPI]
+        Middleware[Auth, Role, Tenant and CORS Middleware]
+        Routers[API Routers]
+        WS[WebSocket Updates]
+    end
+
+    subgraph Services[Security Analysis and Operations Services]
+        SQL[SQL Analysis and SQL Enforcement]
+        File[File Upload Analysis and Queue]
+        Spam[Spam and Phishing Analysis]
+        Dash[Dashboard and Reporting]
+        Alerts[Alerts, Cases and Investigation]
+        Policy[Policy and Configuration]
+    end
+
+    subgraph Assets[Models, Rules and Evidence Assets]
+        Models[Joblib Models and Scalers]
+        Rules[YARA Rules, Blocklists and Thresholds]
+        Corpora[Corpora, Tests and Benchmark Runs]
+    end
+
+    subgraph Storage[Persistence Layer]
+        DB[(SQLite Database)]
+        Logs[Analysis Logs, Alerts, Cases, Audit and Config]
+    end
+
+    subgraph External[Optional Lab and External Integrations]
+        DVWA[DVWA and MySQL Log Forwarder]
+        Dynamic[External File Dynamic Provider]
+    end
+
+    U --> UI
+    UI --> Pages
+    Pages --> Client
+    Client -->|REST requests| Middleware
+    Client <-->|Live event stream| WS
+    Middleware --> Routers
+    Routers --> SQL
+    Routers --> File
+    Routers --> Spam
+    Routers --> Dash
+    Routers --> Alerts
+    Routers --> Policy
+
+    SQL --> Models
+    SQL --> Rules
+    File --> Models
+    File --> Rules
+    Spam --> Models
+    Spam --> Rules
+    Dash --> DB
+    Alerts --> DB
+    Policy --> DB
+
+    SQL --> DB
+    File --> DB
+    Spam --> DB
+    DB --> Logs
+    Logs --> Dash
+    Alerts --> WS
+    SQL --> WS
+    File --> WS
+    Spam --> WS
+
+    Corpora --> Models
+    Corpora --> Rules
+    DVWA --> SQL
+    Dynamic --> File
+
+    SQL -->|Verdict, risk score and explanation| Client
+    File -->|Verdict, risk score and evidence| Client
+    Spam -->|Classification, score and explanation| Client
+    Dash -->|Metrics and trends| Client
+    Alerts -->|Alert and case status| Client
+```
+

@@ -1,0 +1,42 @@
+--- a/dvwa/includes/DBMS/MySQL.php
++++ b/dvwa/includes/DBMS/MySQL.php
+@@
+ function dvwaDatabaseQuery( $link, $query ) {
+ +    // --- DVWA SQL Enforcement Hook (added)
+ +    // Calls external analyzer and blocks on High/Critical risk decisions
+ +    // Configure analyzer URL via env DVWA_ANALYZER_URL (default: http://backend:8000/api/v1/analyze-sql/query)
+ +    $dvwa_analyzer_url = getenv('DVWA_ANALYZER_URL');
+ +    if (!$dvwa_analyzer_url) {
+ +        $dvwa_analyzer_url = 'http://backend:8000/api/v1/analyze-sql/query';
+ +    }
+ +    $should_block = false;
+ +    try {
+ +        $payload = json_encode([ 'query' => $query ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+ +        if ($payload !== false) {
+ +            $ch = curl_init($dvwa_analyzer_url);
+ +            curl_setopt($ch, CURLOPT_POST, true);
+ +            curl_setopt($ch, CURLOPT_HTTPHEADER, [ 'Content-Type: application/json' ]);
+ +            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+ +            curl_setopt($ch, CURLOPT_TIMEOUT, 2);
+ +            curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+ +            $resp_raw = curl_exec($ch);
+ +            if ($resp_raw !== false) {
+ +                $resp = json_decode($resp_raw, true);
+ +                if (is_array($resp) && isset($resp['combined_assessment']['overall_risk_level'])) {
+ +                    $risk = $resp['combined_assessment']['overall_risk_level'];
+ +                    if ($risk === 'High' || $risk === 'Critical') {
+ +                        $should_block = true;
+ +                    }
+ +                }
+ +            }
+ +            curl_close($ch);
+ +        }
+ +    } catch (\Throwable $e) {
+ +        // Fail-open on analyzer errors (optional): keep as-is for DVWA lab
+ +    }
+ +    if ($should_block) {
+ +        http_response_code(403);
+ +        die('Blocked by SQL policy (risk decision High/Critical).');
+ +    }
+     // ... original body continues below ...
+ }

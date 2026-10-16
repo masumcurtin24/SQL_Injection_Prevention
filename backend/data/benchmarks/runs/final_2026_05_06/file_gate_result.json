@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "reasons": [],
+  "execution": {
+    "passed": true,
+    "reasons": []
+  },
+  "quality": {
+    "passed": true,
+    "reasons": [],
+    "components": {
+      "domain_metrics": {
+        "passed": true,
+        "reasons": []
+      },
+      "sql_slice_metrics": {
+        "passed": true,
+        "reasons": []
+      },
+      "sql_heldout_metrics": {
+        "passed": true,
+        "reasons": []
+      },
+      "file_dynamic_policy_metrics": {
+        "passed": true,
+        "reasons": []
+      }
+    }
+  }
+}

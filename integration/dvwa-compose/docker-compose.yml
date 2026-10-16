@@ -1,0 +1,76 @@
+version: '3.9'
+
+networks:
+  labnet:
+    driver: bridge
+
+volumes:
+  mysql-data:
+  mysql-logs:
+
+services:
+  backend:
+    build:
+      context: ../..
+      dockerfile: integration/dvwa-compose/backend.Dockerfile
+    container_name: analyzer-backend
+    environment:
+      - SQL_ENFORCEMENT_MODE=monitor
+      - HEURISTICS_HIGH_THRESHOLD=0.75
+    ports:
+      - "8000:8000"
+    networks:
+      - labnet
+    volumes:
+      - ../../:/app
+
+  mariadb:
+    image: mariadb:10.6
+    container_name: dvwa-mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+    command: ["--general-log=1","--general-log-file=/var/log/mysql/general.log"]
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - mysql-logs:/var/log/mysql
+    expose:
+      - "3306"
+    networks:
+      - labnet
+
+  dvwa:
+    image: vulnerables/web-dvwa
+    container_name: dvwa
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
+    networks:
+      - labnet
+    environment:
+      - DVWA_ANALYZER_URL=http://backend:8000/api/v1/analyze-sql/query
+    # To apply the PHP patch, copy tools/dvwa/mysql_enforcement.patch into the DVWA container and patch MySQL.php
+    # Example (manual): docker cp tools/dvwa/mysql_enforcement.patch dvwa:/tmp/ && docker exec -it dvwa sh -c "cd /var/www/html && patch -p1 < /tmp/mysql_enforcement.patch"
+
+  forwarder:
+    image: python:3.11-slim
+    container_name: mysql-forwarder
+    depends_on:
+      - mariadb
+      - backend
+    networks:
+      - labnet
+    volumes:
+      - ../../tools/scripts:/scripts:ro
+      - mysql-logs:/logs:ro
+    command: ["python","/scripts/mysql_general_log_forwarder.py","--log","/logs/general.log","--endpoint","http://backend:8000/api/v1/analyze-sql/query","--batch-size","1"]
+
+  tester:
+    image: curlimages/curl:8.6.0
+    container_name: analyzer-tester
+    depends_on:
+      - backend
+    networks:
+      - labnet
+    command: ["sh","-c","sleep 5 && curl -s http://backend:8000/health && echo && curl -s -X POST http://backend:8000/api/v1/analyze-sql/query -H 'Content-Type: application/json' -d '{\"query\":\"SELECT 1; DROP TABLE users; --\"}'"]
+

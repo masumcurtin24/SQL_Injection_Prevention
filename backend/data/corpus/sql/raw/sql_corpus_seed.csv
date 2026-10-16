@@ -1,0 +1,34 @@
+label,scenario,query,dialect,orm_name,service_context,notes
+benign,benign_enterprise_query,"SELECT id, customer_id, total_amount FROM invoices WHERE tenant_id = ? AND status = ?",postgresql,sqlalchemy,billing-api,enterprise benign workload
+benign,benign_enterprise_query,"SELECT order_id, sku, quantity FROM order_items WHERE order_id = $1",postgresql,django_orm,order-api,enterprise benign workload
+benign,benign_enterprise_query,"SELECT TOP 50 id, event_type FROM audit_logs ORDER BY created_at DESC",sqlserver,none,audit-service,enterprise benign workload
+benign,benign_enterprise_query,"SELECT id, display_name FROM users WHERE org_id = @org AND active = 1",sqlserver,entity_framework,identity-service,enterprise benign workload
+benign,benign_enterprise_query,"SELECT id, amount FROM payments WHERE created_at >= NOW() - interval '7 days'",postgresql,none,payment-service,enterprise benign workload
+benign,benign_enterprise_query,"SELECT region, SUM(amount) FROM revenue GROUP BY region",mysql,none,analytics-service,enterprise benign workload
+benign,orm_generated_query,"SELECT ""user"".""id"", ""user"".""email"" FROM ""user"" WHERE ""user"".""id"" = $1",postgresql,django_orm,auth-service,ORM generated baseline
+benign,orm_generated_query,"SELECT users.id AS users_id, users.email AS users_email FROM users WHERE users.id = %(id_1)s",mysql,sqlalchemy,auth-service,ORM generated baseline
+benign,orm_generated_query,"SELECT [u].[Id], [u].[Email] FROM [Users] AS [u] WHERE [u].[Id] = @__id_0",sqlserver,entity_framework,identity-service,ORM generated baseline
+benign,orm_generated_query,"SELECT t0.""Id"", t0.""Name"" FROM ""Tenant"" t0 WHERE t0.""IsActive"" = $1",postgresql,sequelize,tenant-service,ORM generated baseline
+benign,cross_dialect_query,SELECT NOW(),postgresql,none,healthcheck-service,cross dialect benign query
+benign,cross_dialect_query,SELECT GETDATE(),sqlserver,none,healthcheck-service,cross dialect benign query
+benign,cross_dialect_query,SELECT CURRENT_TIMESTAMP(),mysql,none,healthcheck-service,cross dialect benign query
+benign,cross_dialect_query,"SELECT COALESCE(name, 'unknown') FROM customers",postgresql,none,crm-service,cross dialect benign query
+benign,cross_dialect_query,"SELECT ISNULL(name, 'unknown') FROM customers",sqlserver,none,crm-service,cross dialect benign query
+benign,cross_dialect_query,"SELECT IFNULL(name, 'unknown') FROM customers",mysql,none,crm-service,cross dialect benign query
+malicious,obfuscated_sqli,SeLeCt * FrOm users WhErE id=1/**/OR/**/1=1--,mysql,none,public-api,obfuscated injection payload
+malicious,obfuscated_sqli,SELECT/*foo*/name FROM admin WHERE user='a' OR '1'='1' --,postgresql,none,public-api,obfuscated injection payload
+malicious,obfuscated_sqli,SELECT id FROM users WHERE id=1 /*!50000OR*/ 1=1,mysql,none,public-api,obfuscated injection payload
+malicious,obfuscated_sqli,SELECT * FROM products WHERE id='1' OR/**/sleep(5)#,mysql,none,public-api,obfuscated injection payload
+malicious,obfuscated_sqli,SELECT * FROM members WHERE username='x' OR 1=1;--,sqlserver,none,public-api,obfuscated injection payload
+malicious,obfuscated_sqli,SELECT id FROM t WHERE id=1 OR 1=1/*injected*/,postgresql,none,public-api,obfuscated injection payload
+malicious,stored_procedure_abuse,EXEC xp_cmdshell 'whoami',sqlserver,none,legacy-admin-console,stored procedure abuse sample
+malicious,stored_procedure_abuse,EXEC master..xp_dirtree 'C:\\',sqlserver,none,legacy-admin-console,stored procedure abuse sample
+malicious,stored_procedure_abuse,EXEC sp_OACreate 'WScript.Shell',sqlserver,none,legacy-admin-console,stored procedure abuse sample
+malicious,stored_procedure_abuse,CALL sys_eval('id'),mysql,none,legacy-admin-console,stored procedure abuse sample
+malicious,stored_procedure_abuse,SELECT pg_sleep(10),postgresql,none,legacy-admin-console,stored procedure abuse sample
+malicious,service_context_trace,SELECT * FROM orders WHERE id = 42; DROP TABLE orders; --,postgresql,none,order-api,context-labeled malicious trace
+malicious,service_context_trace,UPDATE users SET is_admin = 1 WHERE id = 4 OR 1=1,mysql,none,identity-service,context-labeled malicious trace
+malicious,service_context_trace,SELECT card_no FROM cards WHERE user_id = 7 UNION SELECT password FROM users,postgresql,none,payment-service,context-labeled malicious trace
+malicious,service_context_trace,DELETE FROM logs WHERE tenant_id = 5 OR 1=1,sqlserver,none,audit-service,context-labeled malicious trace
+malicious,service_context_trace,SELECT * FROM invoices WHERE id = @id; WAITFOR DELAY '00:00:05'--,sqlserver,none,billing-api,context-labeled malicious trace
+malicious,service_context_trace,SELECT * FROM accounts WHERE email = '' OR pg_sleep(5)--,postgresql,none,auth-service,context-labeled malicious trace

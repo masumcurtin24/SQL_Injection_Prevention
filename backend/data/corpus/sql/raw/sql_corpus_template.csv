@@ -1,0 +1,7 @@
+label,scenario,query,dialect,orm_name,service_context,notes
+benign,benign_enterprise_query,"SELECT id, name FROM customers WHERE tenant_id = ? AND status = ?","postgresql","sqlalchemy","billing-api","enterprise read query"
+benign,orm_generated_query,"SELECT ""user"".""id"", ""user"".""email"" FROM ""user"" WHERE ""user"".""id"" = $1","postgresql","django_orm","auth-service","ORM generated"
+benign,cross_dialect_query,"SELECT TOP 10 id, amount FROM invoices ORDER BY created_at DESC","sqlserver","none","finance-service","SQL Server benign sample"
+malicious,obfuscated_sqli,"SeLeCt * FrOm users WhErE id=1/**/OR/**/1=1--","mysql","none","public-api","obfuscated boolean SQLi"
+malicious,stored_procedure_abuse,"EXEC xp_cmdshell 'whoami'","sqlserver","none","legacy-admin-console","stored procedure abuse"
+malicious,service_context_trace,"SELECT * FROM orders WHERE id = 42; DROP TABLE orders; --","postgresql","none","order-api","context-labeled malicious trace"

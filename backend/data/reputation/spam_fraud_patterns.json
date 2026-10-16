@@ -1,0 +1,132 @@
+{
+  "version": "community-fraud-patterns-2026-04-02",
+  "patterns": [
+    {
+      "id": "credential_reset_lure",
+      "label": "Credential reset / account verify lure",
+      "severity": "high",
+      "theme": "credential",
+      "weight": 0.26,
+      "requires_url": true,
+      "impact": "Likely credential-harvesting social engineering.",
+      "patterns": [
+        "\\b(?:verify|confirm|re-?authenticate|reset)\\b.{0,60}\\b(?:account|identity|mailbox|password|credentials?)\\b",
+        "\\bpassword\\s+(?:expired|expires?|reset|required)\\b",
+        "\\bunusual\\s+sign-?in\\b.{0,60}\\b(?:verify|confirm)\\b"
+      ]
+    },
+    {
+      "id": "collab_credentials_sheet_lure",
+      "label": "Collaboration mention + credentials sheet lure",
+      "severity": "high",
+      "theme": "credential",
+      "weight": 0.28,
+      "requires_url": true,
+      "impact": "Impersonated collaboration alert requesting credential file access.",
+      "patterns": [
+        "\\byou were mentioned\\b",
+        "\\btagged you\\b.{0,80}\\b(?:comment|project|ticket)\\b",
+        "\\b(?:updated|latest|new)\\s+credentials?\\s+(?:sheet|file|doc(?:ument)?)\\b"
+      ]
+    },
+    {
+      "id": "invoice_wire_reroute",
+      "label": "Invoice / wire rerouting BEC pattern",
+      "severity": "high",
+      "theme": "bec",
+      "weight": 0.24,
+      "requires_url": true,
+      "impact": "Payment diversion or business email compromise.",
+      "patterns": [
+        "\\b(?:invoice|payment)\\b.{0,120}\\b(?:past due|overdue|due today)\\b",
+        "\\b(?:wire|ach|bank)\\s+(?:instructions?|details?)\\s+(?:updated|changed)\\b",
+        "\\b(?:new|updated)\\s+beneficiary\\b"
+      ]
+    },
+    {
+      "id": "gift_card_exec_impersonation",
+      "label": "Executive gift-card impersonation scam",
+      "severity": "high",
+      "theme": "bec",
+      "weight": 0.24,
+      "requires_url": false,
+      "impact": "Direct financial theft via social engineering.",
+      "patterns": [
+        "\\bgift\\s*card\\b",
+        "\\b(?:can't|cannot)\\s+talk\\b",
+        "\\bsend\\s+(?:the\\s+)?(?:pin|code|photos?)\\b",
+        "\\b(?:apple|google\\s*play|amazon|target)\\s+gift\\s*card\\b"
+      ]
+    },
+    {
+      "id": "delivery_redelivery_scam",
+      "label": "Delivery redelivery payment lure",
+      "severity": "medium",
+      "theme": "delivery",
+      "weight": 0.20,
+      "requires_url": true,
+      "impact": "Phishing/payment capture through fake parcel notifications.",
+      "patterns": [
+        "\\b(?:missed|failed)\\s+(?:delivery|package)\\b",
+        "\\b(?:redelivery|re-?delivery)\\b",
+        "\\bdelivery\\s+fee\\b"
+      ]
+    },
+    {
+      "id": "mfa_push_fatigue",
+      "label": "MFA push fatigue lure",
+      "severity": "high",
+      "theme": "mfa",
+      "weight": 0.22,
+      "requires_url": false,
+      "impact": "Unauthorized access if repeated MFA prompts are approved.",
+      "patterns": [
+        "\\b(?:approve|accept)\\b.{0,40}\\bmfa\\b",
+        "\\brepeated\\s+mfa\\s+prompts?\\b",
+        "\\bpush\\s+notification\\b.{0,40}\\bapprove\\b"
+      ]
+    },
+    {
+      "id": "bank_transfer_reversal_pressure",
+      "label": "Unauthorized transfer reversal pressure",
+      "severity": "high",
+      "theme": "finance",
+      "weight": 0.30,
+      "requires_url": true,
+      "impact": "High-confidence banking fraud lure with urgency.",
+      "patterns": [
+        "\\b(?:suspicious|unauthori[sz]ed)\\s+(?:transfer|transaction|payment)\\b",
+        "\\bif\\s+unauthori[sz]ed\\b.{0,40}\\b(?:cancel|reverse|stop)\\b",
+        "\\b(?:transfer|transaction)\\s+will\\s+be\\s+processed\\b"
+      ]
+    },
+    {
+      "id": "direct_money_request_link_lure",
+      "label": "Direct money request with embedded link",
+      "severity": "high",
+      "theme": "finance",
+      "weight": 0.28,
+      "requires_url": true,
+      "impact": "Likely advance-fee or impersonation scam requesting direct transfer.",
+      "patterns": [
+        "\\b(?:send|transfer|wire|pay)\\s+(?:me\\s+)?(?:\\$|usd|aud|eur|gbp|cad|sgd)\\s*[\\d,]+(?:\\.\\d{2})?\\b",
+        "\\b(?:using|via)\\s+the\\s+following\\s+link\\b",
+        "\\b(?:send|transfer|wire)\\s+funds?\\s+now\\b"
+      ]
+    },
+    {
+      "id": "tech_support_remote_access",
+      "label": "Tech-support remote access scam",
+      "severity": "high",
+      "theme": "tech_support",
+      "weight": 0.23,
+      "requires_url": true,
+      "impact": "Potential remote compromise and fraudulent support payment.",
+      "patterns": [
+        "\\b(?:microsoft|windows|apple)\\s+(?:support|security)\\s+alert\\b",
+        "\\b(?:install|open)\\s+(?:teamviewer|anydesk|remote\\s+desktop)\\b",
+        "\\bcall\\s+support\\s+now\\b"
+      ]
+    }
+  ]
+}

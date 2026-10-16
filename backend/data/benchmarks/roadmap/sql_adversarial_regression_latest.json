@@ -1,0 +1,56 @@
+{
+  "status": "ok",
+  "generated_at": "2026-04-09T16:42:41.042311+00:00",
+  "sql_scope": "combined",
+  "strict_gate": true,
+  "run_id": "20260409164203",
+  "run_dir": null,
+  "gate_passed": true,
+  "gate_reasons": [],
+  "metrics": {
+    "analysis": {
+      "confusion_matrix": {
+        "tp": 213,
+        "fp": 2,
+        "tn": 692,
+        "fn": 105
+      },
+      "precision": 0.9907,
+      "recall": 0.6698,
+      "f1": 0.7992,
+      "false_positive_rate": 0.0029,
+      "false_negative_count": 105,
+      "high_severity_miss_rate": 0.3302,
+      "support": 1012
+    },
+    "enforcement": {
+      "confusion_matrix": {
+        "tp": 199,
+        "fp": 0,
+        "tn": 694,
+        "fn": 119
+      },
+      "precision": 1.0,
+      "recall": 0.6258,
+      "f1": 0.7698,
+      "false_positive_rate": 0.0,
+      "false_negative_count": 119,
+      "high_severity_miss_rate": 0.3742,
+      "support": 1012
+    }
+  },
+  "baseline_delta": {
+    "enforcement": {
+      "precision": 0.7798,
+      "recall": 0.04849999999999999,
+      "f1": 0.45100000000000007,
+      "false_positive_rate": -0.8881,
+      "false_negative_count": -4.0
+    }
+  },
+  "commands": {
+    "build_corpus": "C:\\Program Files\\Python313\\python.exe backend/scripts/build_evaluation_corpus.py --domain sql --strict",
+    "benchmark": "C:\\Program Files\\Python313\\python.exe backend/scripts/run_benchmark_harness.py --domain sql --sql-scope combined --disable-transformer --strict-gate"
+  },
+  "stderr_tail": ""
+}

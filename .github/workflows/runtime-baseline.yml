@@ -1,0 +1,123 @@
+name: Runtime Baseline
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+env:
+  PYTHON_VERSION: "3.13.3"
+  NODE_VERSION: "20.12.2"
+
+jobs:
+  backend-baseline:
+    runs-on: ubuntu-latest
+    env:
+      ENV: test
+      DATABASE_URL: sqlite:///${{ runner.temp }}/runtime-baseline-${{ github.run_id }}-${{ github.run_attempt }}.sqlite3
+      JWT_SECRET_KEY: ci-secret-key-should-be-at-least-32-bytes
+      BOOTSTRAP_ADMIN_EMAIL: admin@example.com
+      BOOTSTRAP_ADMIN_PASSWORD: admin-password-123
+      BOOTSTRAP_ADMIN_FULL_NAME: Bootstrap Admin
+      AUTH_IDENTITY_MODE: local
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          check-latest: false
+
+      - name: Install backend dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements-dev.txt
+
+      - name: Seed disposable CI database snapshot
+        run: |
+          if [ ! -f "sql_app.db" ]; then
+            echo "Expected seed database sql_app.db is missing."
+            exit 1
+          fi
+          cp sql_app.db "${{ runner.temp }}/runtime-baseline-${{ github.run_id }}-${{ github.run_attempt }}.sqlite3"
+
+      - name: Apply migrations on disposable CI database
+        run: |
+          python scripts/run_migrations.py upgrade
+
+      - name: Run executed critical backend subset (with warning gate)
+        run: |
+          python scripts/run_backend_critical_subset.py
+
+      - name: Verify backend runtime baseline
+        run: |
+          python scripts/verify_runtime_baseline.py
+
+  frontend-baseline:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          check-latest: false
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install frontend dependencies
+        run: npm ci
+
+      - name: Lint frontend
+        run: npm run lint
+
+      - name: Build frontend
+        run: npm run build
+
+  benchmark-regression:
+    needs: backend-baseline
+    runs-on: ubuntu-latest
+    env:
+      ENV: test
+      JWT_SECRET_KEY: ci-secret-key-should-be-at-least-32-bytes
+      SPAM_TRANSFORMER_MODEL: ""
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          check-latest: false
+
+      - name: Install backend dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements-dev.txt
+
+      - name: Build validated corpora
+        run: |
+          python backend/scripts/build_evaluation_corpus.py --domain all --strict
+
+      - name: Run benchmark regression harness
+        run: |
+          python backend/scripts/run_benchmark_harness.py --domain all --disable-transformer --strict-gate
+
+      - name: Upload benchmark artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-regression-artifacts
+          path: backend/data/benchmarks/runs/latest
+          if-no-files-found: warn

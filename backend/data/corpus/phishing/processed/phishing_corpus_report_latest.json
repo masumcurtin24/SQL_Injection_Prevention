@@ -1,0 +1,55 @@
+{
+  "domain": "phishing",
+  "generated_at": "2026-06-08T20:14:46.006027+00:00",
+  "raw_file_count": 3,
+  "total_rows": 1125,
+  "skipped_rows": 0,
+  "label_distribution": {
+    "1": 815,
+    "0": 310
+  },
+  "split_distribution": {
+    "train": 789,
+    "validation": 168,
+    "test": 168
+  },
+  "scenario_distribution": {
+    "modern_phishing": 272,
+    "multilingual_style_shift": 238,
+    "legitimate_transactional": 204,
+    "sender_domain_metadata": 137,
+    "url_feature_rich": 137,
+    "attachment_feature_rich": 137
+  },
+  "benchmark_group_distribution": {
+    "unknown": 1125
+  },
+  "source_confidence_distribution": {
+    "unknown": 1125
+  },
+  "source_kind_distribution": {
+    "unknown": 1125
+  },
+  "severity_distribution": {
+    "unknown": 1125
+  },
+  "tuned_during_phase2_1_distribution": {
+    "unknown": 1125
+  },
+  "required_scenarios": [
+    "modern_phishing",
+    "legitimate_transactional",
+    "sender_domain_metadata",
+    "url_feature_rich",
+    "attachment_feature_rich",
+    "multilingual_style_shift"
+  ],
+  "missing_scenarios": [],
+  "quality_gate_passed": true,
+  "artifacts": {
+    "versioned_csv": "C:\\backup 10-10-25\\04-17am updates\\SQL_Injection_Prevention\\backend\\data\\corpus\\phishing\\processed\\phishing_corpus_20260608201445.csv",
+    "latest_csv": "C:\\backup 10-10-25\\04-17am updates\\SQL_Injection_Prevention\\backend\\data\\corpus\\phishing\\processed\\phishing_corpus_latest.csv",
+    "versioned_report": "C:\\backup 10-10-25\\04-17am updates\\SQL_Injection_Prevention\\backend\\data\\corpus\\phishing\\processed\\phishing_corpus_report_20260608201445.json",
+    "latest_report": "C:\\backup 10-10-25\\04-17am updates\\SQL_Injection_Prevention\\backend\\data\\corpus\\phishing\\processed\\phishing_corpus_report_latest.json"
+  }
+}

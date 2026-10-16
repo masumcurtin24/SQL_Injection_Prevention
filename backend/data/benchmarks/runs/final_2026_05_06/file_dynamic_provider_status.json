@@ -1,0 +1,26 @@
+{
+  "enabled": false,
+  "requested_provider": "none",
+  "active_provider": "none",
+  "configured": false,
+  "available": false,
+  "misconfigured": false,
+  "readiness_state": "disabled",
+  "reason": "benchmark_dynamic_disabled",
+  "poll_interval_seconds": 0.05,
+  "max_wait_seconds": 1.0,
+  "policy_profile": "baseline_v1",
+  "details": {},
+  "validation": {
+    "exists": true,
+    "artifact_path": "C:\\backup 10-10-25\\04-17am updates\\SQL_Injection_Prevention\\backend\\data\\benchmarks\\provider_validation\\file_dynamic_provider_validation_latest.json",
+    "validation_state": "live_not_validated",
+    "validated": false,
+    "reason": "validation_provider_mismatch",
+    "checked_at": "2026-04-08T16:23:31.564406+00:00",
+    "provider": "http",
+    "provider_base_url": null,
+    "provider_match": false,
+    "base_url_match": true
+  }
+}

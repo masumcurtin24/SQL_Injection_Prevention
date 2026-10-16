@@ -1,0 +1,29 @@
+{
+  "status": "ok",
+  "generated_at": "2026-04-09T16:43:50.426776+00:00",
+  "source_predictions": "C:\\backup 10-10-25\\04-17am updates\\SQL_Injection_Prevention\\backend\\data\\benchmarks\\runs\\latest\\sql_predictions.csv",
+  "total_rows": 1012,
+  "false_negative_count": 119,
+  "false_positive_count": 0,
+  "false_negative_pattern_frequency": {
+    "union_select": 0,
+    "stacked_query": 0,
+    "time_delay": 18,
+    "blind_exfil": 0,
+    "metadata_probe": 4,
+    "proc_abuse": 0,
+    "copy_program": 1,
+    "comment_tamper": 90
+  },
+  "recommended_critical_patterns": [
+    "re:(?i)(--|/\\*|\\*/|#)",
+    "re:(?i)\\b(sleep\\s*\\(|pg_sleep\\s*\\(|benchmark\\s*\\(|waitfor\\s+delay)\\b",
+    "re:(?i)\\b(@@version|version\\s*\\(|database\\s*\\(|current_database\\s*\\(|information_schema)\\b",
+    "re:(?i)\\bcopy\\b[\\s\\S]{0,120}\\bto\\s+program\\b"
+  ],
+  "recommended_allowlist_templates": [],
+  "notes": [
+    "Suggestions are intentionally conservative and should be reviewed manually.",
+    "Generated from benchmark prediction errors; not from production telemetry."
+  ]
+}

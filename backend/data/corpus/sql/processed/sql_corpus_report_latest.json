@@ -1,0 +1,75 @@
+{
+  "domain": "sql",
+  "generated_at": "2026-04-09T16:42:02.066672+00:00",
+  "raw_file_count": 4,
+  "total_rows": 1012,
+  "skipped_rows": 0,
+  "label_distribution": {
+    "0": 694,
+    "1": 318
+  },
+  "split_distribution": {
+    "train": 708,
+    "validation": 152,
+    "test": 152
+  },
+  "scenario_distribution": {
+    "benign_enterprise_query": 244,
+    "orm_generated_query": 241,
+    "cross_dialect_query": 193,
+    "obfuscated_sqli": 152,
+    "stored_procedure_abuse": 75,
+    "service_context_trace": 72,
+    "metadata_introspection_query": 4,
+    "migration_admin_query": 4,
+    "reporting_analytics_query": 4,
+    "parameterized_raw_sql_query": 4,
+    "whitespace_comment_tampering": 3,
+    "schema_enumeration": 3,
+    "file_os_interaction": 3,
+    "cross_dialect_evasion": 3,
+    "stacked_delay_sqli": 3,
+    "encoding_concatenation_evasion": 2,
+    "service_context_bypass": 2
+  },
+  "benchmark_group_distribution": {
+    "regression": 959,
+    "held_out_adversarial": 51,
+    "tuning": 2
+  },
+  "source_confidence_distribution": {
+    "weak": 926,
+    "high": 51,
+    "medium": 35
+  },
+  "source_kind_distribution": {
+    "weaklabel": 926,
+    "curated": 51,
+    "synthetic": 35
+  },
+  "severity_distribution": {
+    "none": 694,
+    "high": 237,
+    "critical": 81
+  },
+  "tuned_during_phase2_1_distribution": {
+    "true": 961,
+    "false": 51
+  },
+  "required_scenarios": [
+    "benign_enterprise_query",
+    "orm_generated_query",
+    "cross_dialect_query",
+    "obfuscated_sqli",
+    "stored_procedure_abuse",
+    "service_context_trace"
+  ],
+  "missing_scenarios": [],
+  "quality_gate_passed": true,
+  "artifacts": {
+    "versioned_csv": "C:\\backup 10-10-25\\04-17am updates\\SQL_Injection_Prevention\\backend\\data\\corpus\\sql\\processed\\sql_corpus_20260409164202.csv",
+    "latest_csv": "C:\\backup 10-10-25\\04-17am updates\\SQL_Injection_Prevention\\backend\\data\\corpus\\sql\\processed\\sql_corpus_latest.csv",
+    "versioned_report": "C:\\backup 10-10-25\\04-17am updates\\SQL_Injection_Prevention\\backend\\data\\corpus\\sql\\processed\\sql_corpus_report_20260409164202.json",
+    "latest_report": "C:\\backup 10-10-25\\04-17am updates\\SQL_Injection_Prevention\\backend\\data\\corpus\\sql\\processed\\sql_corpus_report_latest.json"
+  }
+}

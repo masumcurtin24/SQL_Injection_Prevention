@@ -1,0 +1,45 @@
+sources:
+  - id: neo23x0_signature_base_curated
+    description: Curated high-signal upstream rules from Neo23x0/signature-base.
+    repo: Neo23x0/signature-base
+    path: yara
+    branch: master
+    include:
+      - '^gen_powershell_obfuscation\.yar$'
+      - '^gen_powershell_invocation\.yar$'
+      - '^gen_powershell_suite\.yar$'
+      - '^gen_cmd_script_obfuscated\.yar$'
+      - '^gen_susp_js_obfuscatorio\.yar$'
+      - '^gen_susp_svg_js_phish_.*\.yar$'
+      - '^gen_mal_scripts\.yar$'
+      - '^gen_webshells\.yar$'
+    exclude:
+      - '.*_ext_vars\.yar$'
+      - '^configured_vulns_ext_vars\.yar$'
+    max_files: 20
+
+vetting:
+  # Reject very large files to keep compile time bounded for automated jobs.
+  max_file_bytes: 700000
+  max_rules_per_file: 1600
+
+regression:
+  benign_paths:
+    - backend/data/raw/files_for_analysis_training/benign_samples
+    - docs/report
+    - README.md
+  max_benign_files: 400
+  max_bytes_per_file: 1000000
+  staging:
+    max_fp_files: 25
+    max_total_matches: 80
+  canary:
+    max_fp_files: 16
+    max_total_matches: 55
+  promotion:
+    max_fp_files: 12
+    max_total_matches: 40
+
+promotion:
+  active_prefix: upstream_
+  canary_max_files: 3

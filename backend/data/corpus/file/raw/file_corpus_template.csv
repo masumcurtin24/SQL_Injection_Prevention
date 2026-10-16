@@ -1,0 +1,6 @@
+label,scenario,filename,file_type,mime_type,extension,macro_enabled,nested_archive,content_excerpt,notes
+safe,benign_complex_pdf_ooxml,annual_report_2025.pdf,pdf,application/pdf,pdf,false,false,"Board report with tables, images, and external links.",benign complex PDF
+safe,benign_macro_enabled_office,finance_template.xlsm,ooxml,application/vnd.ms-excel.sheet.macroEnabled.12,xlsm,true,false,"Signed internal macro for monthly report generation.",benign signed macro workbook
+malicious,malicious_pdf_ooxml,payload_invoice.pdf,pdf,application/pdf,pdf,false,false,"Embedded JavaScript and suspicious launch action.",malicious PDF behavior
+malicious,nested_archive_abuse,docs_bundle.zip,archive,application/zip,zip,false,true,"Nested zip with multi-level archives and executable bait.",nested archive abuse
+malicious,mime_extension_mismatch,statement.pdf,unknown,text/html,pdf,false,false,"HTML script content saved with .pdf extension.",mislabeled extension/mime mismatch

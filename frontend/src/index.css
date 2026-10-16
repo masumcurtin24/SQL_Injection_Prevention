@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply bg-dark-primary text-text-primary;
+  }
+
+  body {
+    @apply min-h-screen bg-dark-primary font-sans text-text-primary;
+  }
+
+  button,
+  [role='button'],
+  input,
+  select,
+  textarea {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-primary;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-secondary;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-md bg-border-light;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-500;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #484f58 #161b22;
+  }
+}
+
+@layer base {
+  ::selection {
+    @apply bg-cyan-500/30 text-white;
+  }
+}

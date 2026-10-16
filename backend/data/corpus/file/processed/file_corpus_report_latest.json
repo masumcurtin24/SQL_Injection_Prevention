@@ -1,0 +1,53 @@
+{
+  "domain": "file",
+  "generated_at": "2026-04-08T15:38:16.696877+00:00",
+  "raw_file_count": 2,
+  "total_rows": 77,
+  "skipped_rows": 0,
+  "label_distribution": {
+    "1": 39,
+    "0": 38
+  },
+  "split_distribution": {
+    "train": 53,
+    "test": 12,
+    "validation": 12
+  },
+  "scenario_distribution": {
+    "benign_complex_pdf_ooxml": 21,
+    "benign_macro_enabled_office": 17,
+    "malicious_pdf_ooxml": 15,
+    "nested_archive_abuse": 13,
+    "mime_extension_mismatch": 11
+  },
+  "benchmark_group_distribution": {
+    "unknown": 77
+  },
+  "source_confidence_distribution": {
+    "unknown": 77
+  },
+  "source_kind_distribution": {
+    "unknown": 77
+  },
+  "severity_distribution": {
+    "unknown": 77
+  },
+  "tuned_during_phase2_1_distribution": {
+    "unknown": 77
+  },
+  "required_scenarios": [
+    "benign_complex_pdf_ooxml",
+    "benign_macro_enabled_office",
+    "malicious_pdf_ooxml",
+    "nested_archive_abuse",
+    "mime_extension_mismatch"
+  ],
+  "missing_scenarios": [],
+  "quality_gate_passed": true,
+  "artifacts": {
+    "versioned_csv": "C:\\backup 10-10-25\\04-17am updates\\SQL_Injection_Prevention\\backend\\data\\corpus\\file\\processed\\file_corpus_20260408153816.csv",
+    "latest_csv": "C:\\backup 10-10-25\\04-17am updates\\SQL_Injection_Prevention\\backend\\data\\corpus\\file\\processed\\file_corpus_latest.csv",
+    "versioned_report": "C:\\backup 10-10-25\\04-17am updates\\SQL_Injection_Prevention\\backend\\data\\corpus\\file\\processed\\file_corpus_report_20260408153816.json",
+    "latest_report": "C:\\backup 10-10-25\\04-17am updates\\SQL_Injection_Prevention\\backend\\data\\corpus\\file\\processed\\file_corpus_report_latest.json"
+  }
+}

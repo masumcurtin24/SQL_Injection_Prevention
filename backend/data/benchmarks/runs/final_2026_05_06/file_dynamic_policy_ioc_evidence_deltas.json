@@ -1,0 +1,25 @@
+{
+  "sample_count": 77,
+  "samples_with_dynamic_completed": 0,
+  "samples_with_dynamic_delta": 0,
+  "additional_iocs_from_dynamic_total": 0,
+  "additional_evidence_items_from_dynamic_total": 0,
+  "avg_additional_iocs_per_completed_sample": 0.0,
+  "avg_additional_evidence_per_completed_sample": 0.0,
+  "ioc_source_counts": {
+    "static_or_non_dynamic": 506,
+    "dynamic": 0
+  },
+  "static_vs_dynamic_source_rates": {
+    "static_or_non_dynamic_rate": 1.0,
+    "dynamic_rate": 0.0
+  },
+  "dynamic_origin_correlation_inputs": {
+    "total": 0,
+    "by_type": {}
+  },
+  "limitations": [
+    "No completed dynamic-analysis samples were observed in this run; IOC/evidence deltas are informational only.",
+    "Dynamic provider produced no additional evidence/IOCs; this does not prove dynamic analysis has no value."
+  ]
+}

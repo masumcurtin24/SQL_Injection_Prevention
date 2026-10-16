@@ -1,0 +1,156 @@
+---
+# Prevention rules and policies (example baseline)
+
+critical_patterns:
+  - re:';\s*(drop|delete|insert|update|alter|exec|execute)\b'
+  - re:'(?i)union\s+select\b'
+  - re:'(?i)union\s+all\s+select\b'
+  - re:'(?i)sleep\s*\(\s*\d+'
+  - re:'(?i)benchmark\s*\(\s*\d+'
+  - re:'(?i)pg_sleep\s*\('
+  - re:'(?i)waitfor\s+delay\s+\'\d+:\d+:\d+\''
+  - re:'(?i)xp_cmdshell\b'
+  - re:'(?i)xp_dirtree\b'
+  - re:'(?i)xp_reg(read|write)\b'
+  - re:'(?i)openrowset\s*\('
+  - re:'(?i)sp_oacreate\b'
+  - re:'(?i)copy\s+\S+\s+to\s+program\s+'''
+  - re:'(?i)\b(load_file|into\s+outfile|into\s+dumpfile)\b'
+  - re:'(?i)\b(or|and)\b\s+\d+\s*=\s*\d+\b'
+  - re:'(?i)/\*!\d{3,5}\s'
+
+ddl_exec:
+  policy: deny_non_migration  # deny | monitor | allow | deny_non_migration
+  allowed_services: '^alembic$|^/admin/migrations$'
+  allowlist_patterns:
+    - 'CREATE TABLE alembic_version'
+    - re:'^ALTER\s+TABLE\s+.*\s+ADD\s+COLUMN\s+\w+\s+\w+'
+
+allowlist:
+  mode: safe  # safe | regex
+  last_reviewed_at: '2026-03-18'
+  max_age_days: 180
+
+monitor:
+  backoff_n: 5
+
+parameterization:
+  require: true
+
+service_context:
+  require: true
+
+telemetry:
+  file: 'backend/data/telemetry/sql_enforcement.log'
+
+sql_construction:
+  # strict | monitor | off
+  mode: strict
+  require_parameterized_default: true
+  require_approved_raw_sql: true
+  # flag_for_review_block | block_immediate | block_critical | monitor | allow
+  unknown_raw_sql_action: flag_for_review_block
+  migration_service_pattern: '^alembic$|^/admin/migrations$|^/startup/bootstrap-admin$'
+  allow_constant_select: true
+  service_profiles:
+    - id: runtime-external-strict
+      enabled: true
+      service: '^(?:public(?:-|$)|internet-facing-|legacy-admin-console$|.*admin.*|.*console.*)'
+      description: 'Public/admin-facing services keep strict select+write parameterization.'
+      require_parameterized_select: true
+      require_parameterized_write: true
+      require_approved_raw_sql: true
+      unknown_raw_sql_action: block_immediate
+    - id: runtime-internal-balanced
+      enabled: true
+      service: '^(?:billing-api|orders-api|identity-api|tenant-api|analytics-api|reporting-api)$'
+      description: 'Internal analytics/reporting runtime allows read-only literal selects while keeping write safety strict.'
+      require_parameterized_select: false
+      require_parameterized_write: true
+      require_approved_raw_sql: true
+      unknown_raw_sql_action: flag_for_review_block
+    - id: runtime-fallback-strict
+      enabled: true
+      service: '.*'
+      description: 'Fallback strict profile for unmatched services.'
+      require_parameterized_select: true
+      require_parameterized_write: true
+      require_approved_raw_sql: true
+      unknown_raw_sql_action: flag_for_review_block
+  approved_raw_sql:
+    # Constant health-check probes are allowed in strict mode.
+    - id: health-constant-select
+      enabled: true
+      service: '^/health(?:/ready|/readiness|/live)?$|^/api/v[0-9]+/.*health'
+      template: 'select ? as x'
+      tenant_id: '*'
+      role: viewer
+      reason: 'Operational health probe query'
+      expires_at: '2027-12-31'
+      owner: 'platform-security'
+      allow_unparameterized: true
+  raw_sql_exceptions:
+    # Migration frameworks legitimately execute raw DDL/SQL.
+    - id: migration-engine
+      enabled: true
+      service: '^alembic$|^/admin/migrations$'
+      tenant_id: '*'
+      role: admin
+      reason: 'Migration runtime context'
+      expires_at: '2027-12-31'
+      owner: 'platform-security'
+      allow_unparameterized: true
+
+file_detection:
+  # suspicious | malicious_on_danger | block_on_danger
+  poc_policy: suspicious
+  archive_limits:
+    max_files: 200
+    max_depth: 3
+    max_uncompressed_mb: 100
+    max_entry_mb: 25
+  yara:
+    malicious_threat_levels: [high, critical]
+    suspicious_threat_levels: [medium, low]
+  allow_domains:
+    payment:
+      - stripe.com
+      - paypal.com
+      - braintreepayments.com
+      - authorize.net
+      - squareup.com
+    exfil: []
+  # Tactical focus refreshed from public LOLBAS/ATT&CK intelligence.
+  watch_lolbas_binaries:
+    - regsvr32
+    - rundll32
+    - mshta
+    - certutil
+
+spam_detection:
+  # Legacy override kept for backward compatibility with existing UI payloads.
+  final_threshold: 0.50
+  thresholds:
+    allow: 0.40
+    suspicious: 0.50
+    block: 0.80
+    ood: 0.68
+  feature_weights:
+    classical: 0.20
+    transformer: 0.32
+    online: 0.10
+    heuristic: 0.20
+    reputation: 0.12
+    campaign: 0.24
+    header: 0.15
+    fraud_pattern: 0.22
+  calibration:
+    a: 3.5
+    b: -1.4
+  suspicious_tlds:
+    - zip
+    - top
+    - work
+    - xyz
+    - click
+    - link

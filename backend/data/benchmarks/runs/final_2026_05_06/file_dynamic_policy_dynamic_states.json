@@ -1,0 +1,14 @@
+{
+  "distribution": {
+    "not_requested": {
+      "count": 77,
+      "rate": 1.0
+    }
+  },
+  "completed_rate": 0.0,
+  "unavailable_rate": 0.0,
+  "failed_rate": 0.0,
+  "running_or_deferred_rate": 0.0,
+  "not_requested_rate": 1.0,
+  "requested_but_provider_unavailable_count": 0
+}

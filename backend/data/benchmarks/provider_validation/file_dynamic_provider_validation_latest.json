@@ -1,0 +1,29 @@
+{
+  "artifact_version": "file_dynamic_provider_validation_v1",
+  "checked_at": "2026-04-08T16:23:31.564406+00:00",
+  "provider": "http",
+  "provider_base_url": "",
+  "diagnostics": {
+    "provider": "http",
+    "configured": false,
+    "available": false,
+    "reason": "missing_http_base_url",
+    "details": {
+      "base_url": "",
+      "submit_path": "/v1/dynamic/submit",
+      "status_path_template": "/v1/dynamic/status/{submission_id}",
+      "result_path_template": "/v1/dynamic/result/{submission_id}",
+      "timeout_seconds": 10.0,
+      "verify_tls": true,
+      "api_key_set": false
+    }
+  },
+  "configured": false,
+  "available": false,
+  "validated": false,
+  "validation_state": "misconfigured",
+  "reason": "missing_http_base_url",
+  "submit_probe": null,
+  "status_probe": null,
+  "result_probe": null
+}

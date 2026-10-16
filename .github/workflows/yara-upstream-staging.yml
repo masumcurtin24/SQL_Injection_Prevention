@@ -1,0 +1,43 @@
+name: YARA Upstream Staging
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "21 2 * * 1"
+
+jobs:
+  stage-yara:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Backend Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+
+      - name: Run YARA Staging Update
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python backend/scripts/update_yara_staging.py --json
+
+      - name: Run Promotion Dry-Run Gate
+        run: |
+          python backend/scripts/promote_yara_staging.py --json
+
+      - name: Upload Staging Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: yara-staging-artifacts
+          path: |
+            backend/yara_rules/staging/manifest.json
+            backend/yara_rules/staging/last_diff.json
+            backend/yara_rules/staging/regression_report.json
+            backend/yara_rules/staging/promotion_report.json

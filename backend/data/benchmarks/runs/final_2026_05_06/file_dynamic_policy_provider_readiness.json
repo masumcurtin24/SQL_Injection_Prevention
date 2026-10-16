@@ -1,0 +1,8 @@
+{
+  "run_label": "disabled",
+  "provider_name": "none",
+  "configured": false,
+  "available": false,
+  "validation_state": "live_not_validated",
+  "validation_reason": "validation_provider_mismatch"
+}

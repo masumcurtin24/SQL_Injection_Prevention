@@ -1,0 +1,3 @@
+# Convenience wrapper for tools that expect a root-level requirements file.
+# For backend-only installs, use backend/requirements.txt directly.
+-r backend/requirements.txt

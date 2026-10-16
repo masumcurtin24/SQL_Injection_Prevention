@@ -1,0 +1,794 @@
+{
+  "file_family": {
+    "archive_nested_archive": {
+      "sample_count": 13,
+      "benign_count": 0,
+      "malicious_count": 13,
+      "benign_only": false,
+      "request_rate": 0.0,
+      "not_requested_rate": 1.0,
+      "skip_rate": 0.0,
+      "completed_rate": 0.0,
+      "unavailable_rate": 0.0,
+      "failed_rate": 0.0,
+      "running_or_deferred_rate": 0.0,
+      "dynamic_not_requested_rate": 1.0,
+      "requested_but_provider_unavailable_count": 0,
+      "request_decisions": {
+        "not_requested": {
+          "count": 13,
+          "rate": 1.0
+        }
+      },
+      "skip_reasons": {
+        "dynamic_disabled": {
+          "count": 13,
+          "rate": 1.0
+        }
+      },
+      "policy_profiles": {
+        "baseline_v1": {
+          "count": 13,
+          "rate": 1.0
+        }
+      },
+      "reason_codes": {
+        "dynamic_disabled": {
+          "count": 13,
+          "rate": 1.0
+        }
+      },
+      "dynamic_states": {
+        "not_requested": {
+          "count": 13,
+          "rate": 1.0
+        }
+      },
+      "missing_reason_code_count": 0
+    },
+    "office_macro": {
+      "sample_count": 39,
+      "benign_count": 27,
+      "malicious_count": 12,
+      "benign_only": false,
+      "request_rate": 0.0,
+      "not_requested_rate": 1.0,
+      "skip_rate": 0.0,
+      "completed_rate": 0.0,
+      "unavailable_rate": 0.0,
+      "failed_rate": 0.0,
+      "running_or_deferred_rate": 0.0,
+      "dynamic_not_requested_rate": 1.0,
+      "requested_but_provider_unavailable_count": 0,
+      "request_decisions": {
+        "not_requested": {
+          "count": 39,
+          "rate": 1.0
+        }
+      },
+      "skip_reasons": {
+        "dynamic_disabled": {
+          "count": 39,
+          "rate": 1.0
+        }
+      },
+      "policy_profiles": {
+        "baseline_v1": {
+          "count": 39,
+          "rate": 1.0
+        }
+      },
+      "reason_codes": {
+        "dynamic_disabled": {
+          "count": 39,
+          "rate": 1.0
+        }
+      },
+      "dynamic_states": {
+        "not_requested": {
+          "count": 39,
+          "rate": 1.0
+        }
+      },
+      "missing_reason_code_count": 0
+    },
+    "pdf": {
+      "sample_count": 23,
+      "benign_count": 11,
+      "malicious_count": 12,
+      "benign_only": false,
+      "request_rate": 0.0,
+      "not_requested_rate": 1.0,
+      "skip_rate": 0.0,
+      "completed_rate": 0.0,
+      "unavailable_rate": 0.0,
+      "failed_rate": 0.0,
+      "running_or_deferred_rate": 0.0,
+      "dynamic_not_requested_rate": 1.0,
+      "requested_but_provider_unavailable_count": 0,
+      "request_decisions": {
+        "not_requested": {
+          "count": 23,
+          "rate": 1.0
+        }
+      },
+      "skip_reasons": {
+        "dynamic_disabled": {
+          "count": 23,
+          "rate": 1.0
+        }
+      },
+      "policy_profiles": {
+        "baseline_v1": {
+          "count": 23,
+          "rate": 1.0
+        }
+      },
+      "reason_codes": {
+        "dynamic_disabled": {
+          "count": 23,
+          "rate": 1.0
+        }
+      },
+      "dynamic_states": {
+        "not_requested": {
+          "count": 23,
+          "rate": 1.0
+        }
+      },
+      "missing_reason_code_count": 0
+    },
+    "script_text": {
+      "sample_count": 2,
+      "benign_count": 0,
+      "malicious_count": 2,
+      "benign_only": false,
+      "request_rate": 0.0,
+      "not_requested_rate": 1.0,
+      "skip_rate": 0.0,
+      "completed_rate": 0.0,
+      "unavailable_rate": 0.0,
+      "failed_rate": 0.0,
+      "running_or_deferred_rate": 0.0,
+      "dynamic_not_requested_rate": 1.0,
+      "requested_but_provider_unavailable_count": 0,
+      "request_decisions": {
+        "not_requested": {
+          "count": 2,
+          "rate": 1.0
+        }
+      },
+      "skip_reasons": {
+        "dynamic_disabled": {
+          "count": 2,
+          "rate": 1.0
+        }
+      },
+      "policy_profiles": {
+        "baseline_v1": {
+          "count": 2,
+          "rate": 1.0
+        }
+      },
+      "reason_codes": {
+        "dynamic_disabled": {
+          "count": 2,
+          "rate": 1.0
+        }
+      },
+      "dynamic_states": {
+        "not_requested": {
+          "count": 2,
+          "rate": 1.0
+        }
+      },
+      "missing_reason_code_count": 0
+    }
+  },
+  "severity_band": {
+    "high": {
+      "sample_count": 24,
+      "benign_count": 0,
+      "malicious_count": 24,
+      "benign_only": false,
+      "request_rate": 0.0,
+      "not_requested_rate": 1.0,
+      "skip_rate": 0.0,
+      "completed_rate": 0.0,
+      "unavailable_rate": 0.0,
+      "failed_rate": 0.0,
+      "running_or_deferred_rate": 0.0,
+      "dynamic_not_requested_rate": 1.0,
+      "requested_but_provider_unavailable_count": 0,
+      "request_decisions": {
+        "not_requested": {
+          "count": 24,
+          "rate": 1.0
+        }
+      },
+      "skip_reasons": {
+        "dynamic_disabled": {
+          "count": 24,
+          "rate": 1.0
+        }
+      },
+      "policy_profiles": {
+        "baseline_v1": {
+          "count": 24,
+          "rate": 1.0
+        }
+      },
+      "reason_codes": {
+        "dynamic_disabled": {
+          "count": 24,
+          "rate": 1.0
+        }
+      },
+      "dynamic_states": {
+        "not_requested": {
+          "count": 24,
+          "rate": 1.0
+        }
+      },
+      "missing_reason_code_count": 0
+    },
+    "low": {
+      "sample_count": 38,
+      "benign_count": 38,
+      "malicious_count": 0,
+      "benign_only": true,
+      "request_rate": 0.0,
+      "not_requested_rate": 1.0,
+      "skip_rate": 0.0,
+      "completed_rate": 0.0,
+      "unavailable_rate": 0.0,
+      "failed_rate": 0.0,
+      "running_or_deferred_rate": 0.0,
+      "dynamic_not_requested_rate": 1.0,
+      "requested_but_provider_unavailable_count": 0,
+      "request_decisions": {
+        "not_requested": {
+          "count": 38,
+          "rate": 1.0
+        }
+      },
+      "skip_reasons": {
+        "dynamic_disabled": {
+          "count": 38,
+          "rate": 1.0
+        }
+      },
+      "policy_profiles": {
+        "baseline_v1": {
+          "count": 38,
+          "rate": 1.0
+        }
+      },
+      "reason_codes": {
+        "dynamic_disabled": {
+          "count": 38,
+          "rate": 1.0
+        }
+      },
+      "dynamic_states": {
+        "not_requested": {
+          "count": 38,
+          "rate": 1.0
+        }
+      },
+      "missing_reason_code_count": 0
+    },
+    "medium": {
+      "sample_count": 15,
+      "benign_count": 0,
+      "malicious_count": 15,
+      "benign_only": false,
+      "request_rate": 0.0,
+      "not_requested_rate": 1.0,
+      "skip_rate": 0.0,
+      "completed_rate": 0.0,
+      "unavailable_rate": 0.0,
+      "failed_rate": 0.0,
+      "running_or_deferred_rate": 0.0,
+      "dynamic_not_requested_rate": 1.0,
+      "requested_but_provider_unavailable_count": 0,
+      "request_decisions": {
+        "not_requested": {
+          "count": 15,
+          "rate": 1.0
+        }
+      },
+      "skip_reasons": {
+        "dynamic_disabled": {
+          "count": 15,
+          "rate": 1.0
+        }
+      },
+      "policy_profiles": {
+        "baseline_v1": {
+          "count": 15,
+          "rate": 1.0
+        }
+      },
+      "reason_codes": {
+        "dynamic_disabled": {
+          "count": 15,
+          "rate": 1.0
+        }
+      },
+      "dynamic_states": {
+        "not_requested": {
+          "count": 15,
+          "rate": 1.0
+        }
+      },
+      "missing_reason_code_count": 0
+    }
+  },
+  "family_severity": {
+    "archive_nested_archive__high": {
+      "sample_count": 13,
+      "benign_count": 0,
+      "malicious_count": 13,
+      "benign_only": false,
+      "request_rate": 0.0,
+      "not_requested_rate": 1.0,
+      "skip_rate": 0.0,
+      "completed_rate": 0.0,
+      "unavailable_rate": 0.0,
+      "failed_rate": 0.0,
+      "running_or_deferred_rate": 0.0,
+      "dynamic_not_requested_rate": 1.0,
+      "requested_but_provider_unavailable_count": 0,
+      "request_decisions": {
+        "not_requested": {
+          "count": 13,
+          "rate": 1.0
+        }
+      },
+      "skip_reasons": {
+        "dynamic_disabled": {
+          "count": 13,
+          "rate": 1.0
+        }
+      },
+      "policy_profiles": {
+        "baseline_v1": {
+          "count": 13,
+          "rate": 1.0
+        }
+      },
+      "reason_codes": {
+        "dynamic_disabled": {
+          "count": 13,
+          "rate": 1.0
+        }
+      },
+      "dynamic_states": {
+        "not_requested": {
+          "count": 13,
+          "rate": 1.0
+        }
+      },
+      "missing_reason_code_count": 0
+    },
+    "office_macro__high": {
+      "sample_count": 4,
+      "benign_count": 0,
+      "malicious_count": 4,
+      "benign_only": false,
+      "request_rate": 0.0,
+      "not_requested_rate": 1.0,
+      "skip_rate": 0.0,
+      "completed_rate": 0.0,
+      "unavailable_rate": 0.0,
+      "failed_rate": 0.0,
+      "running_or_deferred_rate": 0.0,
+      "dynamic_not_requested_rate": 1.0,
+      "requested_but_provider_unavailable_count": 0,
+      "request_decisions": {
+        "not_requested": {
+          "count": 4,
+          "rate": 1.0
+        }
+      },
+      "skip_reasons": {
+        "dynamic_disabled": {
+          "count": 4,
+          "rate": 1.0
+        }
+      },
+      "policy_profiles": {
+        "baseline_v1": {
+          "count": 4,
+          "rate": 1.0
+        }
+      },
+      "reason_codes": {
+        "dynamic_disabled": {
+          "count": 4,
+          "rate": 1.0
+        }
+      },
+      "dynamic_states": {
+        "not_requested": {
+          "count": 4,
+          "rate": 1.0
+        }
+      },
+      "missing_reason_code_count": 0
+    },
+    "office_macro__low": {
+      "sample_count": 27,
+      "benign_count": 27,
+      "malicious_count": 0,
+      "benign_only": true,
+      "request_rate": 0.0,
+      "not_requested_rate": 1.0,
+      "skip_rate": 0.0,
+      "completed_rate": 0.0,
+      "unavailable_rate": 0.0,
+      "failed_rate": 0.0,
+      "running_or_deferred_rate": 0.0,
+      "dynamic_not_requested_rate": 1.0,
+      "requested_but_provider_unavailable_count": 0,
+      "request_decisions": {
+        "not_requested": {
+          "count": 27,
+          "rate": 1.0
+        }
+      },
+      "skip_reasons": {
+        "dynamic_disabled": {
+          "count": 27,
+          "rate": 1.0
+        }
+      },
+      "policy_profiles": {
+        "baseline_v1": {
+          "count": 27,
+          "rate": 1.0
+        }
+      },
+      "reason_codes": {
+        "dynamic_disabled": {
+          "count": 27,
+          "rate": 1.0
+        }
+      },
+      "dynamic_states": {
+        "not_requested": {
+          "count": 27,
+          "rate": 1.0
+        }
+      },
+      "missing_reason_code_count": 0
+    },
+    "office_macro__medium": {
+      "sample_count": 8,
+      "benign_count": 0,
+      "malicious_count": 8,
+      "benign_only": false,
+      "request_rate": 0.0,
+      "not_requested_rate": 1.0,
+      "skip_rate": 0.0,
+      "completed_rate": 0.0,
+      "unavailable_rate": 0.0,
+      "failed_rate": 0.0,
+      "running_or_deferred_rate": 0.0,
+      "dynamic_not_requested_rate": 1.0,
+      "requested_but_provider_unavailable_count": 0,
+      "request_decisions": {
+        "not_requested": {
+          "count": 8,
+          "rate": 1.0
+        }
+      },
+      "skip_reasons": {
+        "dynamic_disabled": {
+          "count": 8,
+          "rate": 1.0
+        }
+      },
+      "policy_profiles": {
+        "baseline_v1": {
+          "count": 8,
+          "rate": 1.0
+        }
+      },
+      "reason_codes": {
+        "dynamic_disabled": {
+          "count": 8,
+          "rate": 1.0
+        }
+      },
+      "dynamic_states": {
+        "not_requested": {
+          "count": 8,
+          "rate": 1.0
+        }
+      },
+      "missing_reason_code_count": 0
+    },
+    "pdf__high": {
+      "sample_count": 5,
+      "benign_count": 0,
+      "malicious_count": 5,
+      "benign_only": false,
+      "request_rate": 0.0,
+      "not_requested_rate": 1.0,
+      "skip_rate": 0.0,
+      "completed_rate": 0.0,
+      "unavailable_rate": 0.0,
+      "failed_rate": 0.0,
+      "running_or_deferred_rate": 0.0,
+      "dynamic_not_requested_rate": 1.0,
+      "requested_but_provider_unavailable_count": 0,
+      "request_decisions": {
+        "not_requested": {
+          "count": 5,
+          "rate": 1.0
+        }
+      },
+      "skip_reasons": {
+        "dynamic_disabled": {
+          "count": 5,
+          "rate": 1.0
+        }
+      },
+      "policy_profiles": {
+        "baseline_v1": {
+          "count": 5,
+          "rate": 1.0
+        }
+      },
+      "reason_codes": {
+        "dynamic_disabled": {
+          "count": 5,
+          "rate": 1.0
+        }
+      },
+      "dynamic_states": {
+        "not_requested": {
+          "count": 5,
+          "rate": 1.0
+        }
+      },
+      "missing_reason_code_count": 0
+    },
+    "pdf__low": {
+      "sample_count": 11,
+      "benign_count": 11,
+      "malicious_count": 0,
+      "benign_only": true,
+      "request_rate": 0.0,
+      "not_requested_rate": 1.0,
+      "skip_rate": 0.0,
+      "completed_rate": 0.0,
+      "unavailable_rate": 0.0,
+      "failed_rate": 0.0,
+      "running_or_deferred_rate": 0.0,
+      "dynamic_not_requested_rate": 1.0,
+      "requested_but_provider_unavailable_count": 0,
+      "request_decisions": {
+        "not_requested": {
+          "count": 11,
+          "rate": 1.0
+        }
+      },
+      "skip_reasons": {
+        "dynamic_disabled": {
+          "count": 11,
+          "rate": 1.0
+        }
+      },
+      "policy_profiles": {
+        "baseline_v1": {
+          "count": 11,
+          "rate": 1.0
+        }
+      },
+      "reason_codes": {
+        "dynamic_disabled": {
+          "count": 11,
+          "rate": 1.0
+        }
+      },
+      "dynamic_states": {
+        "not_requested": {
+          "count": 11,
+          "rate": 1.0
+        }
+      },
+      "missing_reason_code_count": 0
+    },
+    "pdf__medium": {
+      "sample_count": 7,
+      "benign_count": 0,
+      "malicious_count": 7,
+      "benign_only": false,
+      "request_rate": 0.0,
+      "not_requested_rate": 1.0,
+      "skip_rate": 0.0,
+      "completed_rate": 0.0,
+      "unavailable_rate": 0.0,
+      "failed_rate": 0.0,
+      "running_or_deferred_rate": 0.0,
+      "dynamic_not_requested_rate": 1.0,
+      "requested_but_provider_unavailable_count": 0,
+      "request_decisions": {
+        "not_requested": {
+          "count": 7,
+          "rate": 1.0
+        }
+      },
+      "skip_reasons": {
+        "dynamic_disabled": {
+          "count": 7,
+          "rate": 1.0
+        }
+      },
+      "policy_profiles": {
+        "baseline_v1": {
+          "count": 7,
+          "rate": 1.0
+        }
+      },
+      "reason_codes": {
+        "dynamic_disabled": {
+          "count": 7,
+          "rate": 1.0
+        }
+      },
+      "dynamic_states": {
+        "not_requested": {
+          "count": 7,
+          "rate": 1.0
+        }
+      },
+      "missing_reason_code_count": 0
+    },
+    "script_text__high": {
+      "sample_count": 2,
+      "benign_count": 0,
+      "malicious_count": 2,
+      "benign_only": false,
+      "request_rate": 0.0,
+      "not_requested_rate": 1.0,
+      "skip_rate": 0.0,
+      "completed_rate": 0.0,
+      "unavailable_rate": 0.0,
+      "failed_rate": 0.0,
+      "running_or_deferred_rate": 0.0,
+      "dynamic_not_requested_rate": 1.0,
+      "requested_but_provider_unavailable_count": 0,
+      "request_decisions": {
+        "not_requested": {
+          "count": 2,
+          "rate": 1.0
+        }
+      },
+      "skip_reasons": {
+        "dynamic_disabled": {
+          "count": 2,
+          "rate": 1.0
+        }
+      },
+      "policy_profiles": {
+        "baseline_v1": {
+          "count": 2,
+          "rate": 1.0
+        }
+      },
+      "reason_codes": {
+        "dynamic_disabled": {
+          "count": 2,
+          "rate": 1.0
+        }
+      },
+      "dynamic_states": {
+        "not_requested": {
+          "count": 2,
+          "rate": 1.0
+        }
+      },
+      "missing_reason_code_count": 0
+    }
+  },
+  "request_decision": {
+    "not_requested": {
+      "sample_count": 77,
+      "benign_count": 38,
+      "malicious_count": 39,
+      "benign_only": false,
+      "request_rate": 0.0,
+      "not_requested_rate": 1.0,
+      "skip_rate": 0.0,
+      "completed_rate": 0.0,
+      "unavailable_rate": 0.0,
+      "failed_rate": 0.0,
+      "running_or_deferred_rate": 0.0,
+      "dynamic_not_requested_rate": 1.0,
+      "requested_but_provider_unavailable_count": 0,
+      "request_decisions": {
+        "not_requested": {
+          "count": 77,
+          "rate": 1.0
+        }
+      },
+      "skip_reasons": {
+        "dynamic_disabled": {
+          "count": 77,
+          "rate": 1.0
+        }
+      },
+      "policy_profiles": {
+        "baseline_v1": {
+          "count": 77,
+          "rate": 1.0
+        }
+      },
+      "reason_codes": {
+        "dynamic_disabled": {
+          "count": 77,
+          "rate": 1.0
+        }
+      },
+      "dynamic_states": {
+        "not_requested": {
+          "count": 77,
+          "rate": 1.0
+        }
+      },
+      "missing_reason_code_count": 0
+    }
+  },
+  "reason_code": {
+    "dynamic_disabled": {
+      "sample_count": 77,
+      "benign_count": 38,
+      "malicious_count": 39,
+      "benign_only": false,
+      "request_rate": 0.0,
+      "not_requested_rate": 1.0,
+      "skip_rate": 0.0,
+      "completed_rate": 0.0,
+      "unavailable_rate": 0.0,
+      "failed_rate": 0.0,
+      "running_or_deferred_rate": 0.0,
+      "dynamic_not_requested_rate": 1.0,
+      "requested_but_provider_unavailable_count": 0,
+      "request_decisions": {
+        "not_requested": {
+          "count": 77,
+          "rate": 1.0
+        }
+      },
+      "skip_reasons": {
+        "dynamic_disabled": {
+          "count": 77,
+          "rate": 1.0
+        }
+      },
+      "policy_profiles": {
+        "baseline_v1": {
+          "count": 77,
+          "rate": 1.0
+        }
+      },
+      "reason_codes": {
+        "dynamic_disabled": {
+          "count": 77,
+          "rate": 1.0
+        }
+      },
+      "dynamic_states": {
+        "not_requested": {
+          "count": 77,
+          "rate": 1.0
+        }
+      },
+      "missing_reason_code_count": 0
+    }
+  }
+}

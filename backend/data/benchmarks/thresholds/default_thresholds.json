@@ -1,0 +1,117 @@
+{
+  "domains": {
+    "sql.analysis": {
+      "min_precision": 0.85,
+      "min_recall": 0.15,
+      "min_f1": 0.25,
+      "max_fpr": 0.05,
+      "max_high_severity_miss_rate": 0.9
+    },
+    "sql.enforcement": {
+      "min_precision": 0.85,
+      "min_recall": 0.58,
+      "min_f1": 0.7,
+      "max_fpr": 0.05,
+      "max_high_severity_miss_rate": 0.42
+    },
+    "file.triage": {
+      "min_precision": 0.55,
+      "min_recall": 0.65,
+      "min_f1": 0.6,
+      "max_fpr": 0.55,
+      "max_high_severity_miss_rate": 0.4
+    },
+    "phishing.detection": {
+      "min_precision": 0.95,
+      "min_recall": 0.9,
+      "min_f1": 0.92,
+      "max_fpr": 0.05,
+      "max_high_severity_miss_rate": 0.05
+    }
+  },
+  "sql_slices": {
+    "enforcement": {
+      "severity_slice": {
+        "high_severity": {
+          "min_recall": 0.58,
+          "max_high_severity_miss_rate": 0.42
+        },
+        "standard": {
+          "max_fpr": 0.05
+        }
+      },
+      "attack_family": {
+        "obfuscated_sqli": {
+          "min_recall": 0.45,
+          "max_high_severity_miss_rate": 0.56
+        },
+        "service_context_abuse": {
+          "min_recall": 0.6,
+          "max_high_severity_miss_rate": 0.4
+        },
+        "stored_procedure_abuse": {
+          "min_recall": 0.85,
+          "max_high_severity_miss_rate": 0.15
+        }
+      },
+      "dialect": {
+        "mysql": {
+          "max_fpr": 0.05
+        },
+        "oracle": {
+          "max_fpr": 0.05
+        },
+        "postgresql": {
+          "max_fpr": 0.05
+        },
+        "sqlserver": {
+          "max_fpr": 0.05
+        }
+      }
+    }
+  },
+  "sql_heldout": {
+    "enforcement": {
+      "min_sample_count": 20,
+      "min_precision": 0.8,
+      "min_recall": 0.52,
+      "min_f1": 0.65,
+      "max_fpr": 0.08,
+      "max_high_severity_miss_rate": 0.48
+    }
+  },
+  "regression": {
+    "max_precision_drop": 0.05,
+    "max_recall_drop": 0.05,
+    "max_f1_drop": 0.05,
+    "max_fpr_increase": 0.05,
+    "max_high_severity_miss_rate_increase": 0.05
+  },
+  "file_dynamic_policy": {
+    "required_sections": [
+      "overall",
+      "request_decisions",
+      "skip_reasons",
+      "reason_codes",
+      "policy_profiles",
+      "dynamic_states",
+      "slices",
+      "informational_deltas",
+      "provider_readiness"
+    ],
+    "require_reason_code_for_actionable_decisions": true,
+    "required_dynamic_state_keys": [
+      "completed_rate",
+      "unavailable_rate",
+      "failed_rate",
+      "running_or_deferred_rate",
+      "not_requested_rate",
+      "requested_but_provider_unavailable_count"
+    ],
+    "benign_family_request_rate_ceiling": {
+      "enabled": true,
+      "min_sample_count": 6,
+      "max_request_rate": 0.35
+    }
+  }
+}

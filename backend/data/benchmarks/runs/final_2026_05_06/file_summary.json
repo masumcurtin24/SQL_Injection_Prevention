@@ -1,0 +1,3768 @@
+{
+  "run_id": "20260501030507",
+  "generated_at": "2026-05-01T03:05:11.023356+00:00",
+  "domains": [
+    "file"
+  ],
+  "sql_scope": "combined",
+  "file_dynamic_runtime": {
+    "mode": "disabled",
+    "enabled": false,
+    "provider_name": "none",
+    "provider_config": {
+      "reason": "benchmark_dynamic_disabled"
+    },
+    "poll_interval_seconds": 0.05,
+    "max_wait_seconds": 1.0
+  },
+  "results": {
+    "file": {
+      "metrics": {
+        "confusion_matrix": {
+          "tp": 39,
+          "fp": 0,
+          "tn": 38,
+          "fn": 0
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_count": 0,
+        "high_severity_miss_rate": 0.0,
+        "support": 77
+      },
+      "slices": {
+        "file_type": {
+          "archive": {
+            "confusion_matrix": {
+              "tp": 13,
+              "fp": 0,
+              "tn": 0,
+              "fn": 0
+            },
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_positive_rate": 0.0,
+            "false_negative_count": 0,
+            "high_severity_miss_rate": 0.0,
+            "support": 13,
+            "sample_count": 13
+          },
+          "ooxml": {
+            "confusion_matrix": {
+              "tp": 8,
+              "fp": 0,
+              "tn": 27,
+              "fn": 0
+            },
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_positive_rate": 0.0,
+            "false_negative_count": 0,
+            "high_severity_miss_rate": 0.0,
+            "support": 35,
+            "sample_count": 35
+          },
+          "pdf": {
+            "confusion_matrix": {
+              "tp": 7,
+              "fp": 0,
+              "tn": 11,
+              "fn": 0
+            },
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_positive_rate": 0.0,
+            "false_negative_count": 0,
+            "high_severity_miss_rate": 0.0,
+            "support": 18,
+            "sample_count": 18
+          },
+          "unknown": {
+            "confusion_matrix": {
+              "tp": 11,
+              "fp": 0,
+              "tn": 0,
+              "fn": 0
+            },
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_positive_rate": 0.0,
+            "false_negative_count": 0,
+            "high_severity_miss_rate": 0.0,
+            "support": 11,
+            "sample_count": 11
+          }
+        },
+        "malicious_doc": {
+          "no": {
+            "confusion_matrix": {
+              "tp": 15,
+              "fp": 0,
+              "tn": 0,
+              "fn": 0
+            },
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_positive_rate": 0.0,
+            "false_negative_count": 0,
+            "high_severity_miss_rate": 0.0,
+            "support": 15,
+            "sample_count": 15
+          },
+          "yes": {
+            "confusion_matrix": {
+              "tp": 24,
+              "fp": 0,
+              "tn": 38,
+              "fn": 0
+            },
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_positive_rate": 0.0,
+            "false_negative_count": 0,
+            "high_severity_miss_rate": 0.0,
+            "support": 62,
+            "sample_count": 62
+          }
+        },
+        "archive_profile": {
+          "nested_archive": {
+            "confusion_matrix": {
+              "tp": 13,
+              "fp": 0,
+              "tn": 0,
+              "fn": 0
+            },
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_positive_rate": 0.0,
+            "false_negative_count": 0,
+            "high_severity_miss_rate": 0.0,
+            "support": 13,
+            "sample_count": 13
+          },
+          "not_archive": {
+            "confusion_matrix": {
+              "tp": 26,
+              "fp": 0,
+              "tn": 38,
+              "fn": 0
+            },
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_positive_rate": 0.0,
+            "false_negative_count": 0,
+            "high_severity_miss_rate": 0.0,
+            "support": 64,
+            "sample_count": 64
+          }
+        },
+        "payload_class": {
+          "archive": {
+            "confusion_matrix": {
+              "tp": 13,
+              "fp": 0,
+              "tn": 0,
+              "fn": 0
+            },
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_positive_rate": 0.0,
+            "false_negative_count": 0,
+            "high_severity_miss_rate": 0.0,
+            "support": 13,
+            "sample_count": 13
+          },
+          "document": {
+            "confusion_matrix": {
+              "tp": 24,
+              "fp": 0,
+              "tn": 38,
+              "fn": 0
+            },
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_positive_rate": 0.0,
+            "false_negative_count": 0,
+            "high_severity_miss_rate": 0.0,
+            "support": 62,
+            "sample_count": 62
+          },
+          "other": {
+            "confusion_matrix": {
+              "tp": 2,
+              "fp": 0,
+              "tn": 0,
+              "fn": 0
+            },
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_positive_rate": 0.0,
+            "false_negative_count": 0,
+            "high_severity_miss_rate": 0.0,
+            "support": 2,
+            "sample_count": 2
+          }
+        },
+        "scenario": {
+          "benign_complex_pdf_ooxml": {
+            "confusion_matrix": {
+              "tp": 0,
+              "fp": 0,
+              "tn": 21,
+              "fn": 0
+            },
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_positive_rate": 0.0,
+            "false_negative_count": 0,
+            "high_severity_miss_rate": 0.0,
+            "support": 21,
+            "sample_count": 21
+          },
+          "benign_macro_enabled_office": {
+            "confusion_matrix": {
+              "tp": 0,
+              "fp": 0,
+              "tn": 17,
+              "fn": 0
+            },
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_positive_rate": 0.0,
+            "false_negative_count": 0,
+            "high_severity_miss_rate": 0.0,
+            "support": 17,
+            "sample_count": 17
+          },
+          "malicious_pdf_ooxml": {
+            "confusion_matrix": {
+              "tp": 15,
+              "fp": 0,
+              "tn": 0,
+              "fn": 0
+            },
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_positive_rate": 0.0,
+            "false_negative_count": 0,
+            "high_severity_miss_rate": 0.0,
+            "support": 15,
+            "sample_count": 15
+          },
+          "mime_extension_mismatch": {
+            "confusion_matrix": {
+              "tp": 11,
+              "fp": 0,
+              "tn": 0,
+              "fn": 0
+            },
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_positive_rate": 0.0,
+            "false_negative_count": 0,
+            "high_severity_miss_rate": 0.0,
+            "support": 11,
+            "sample_count": 11
+          },
+          "nested_archive_abuse": {
+            "confusion_matrix": {
+              "tp": 13,
+              "fp": 0,
+              "tn": 0,
+              "fn": 0
+            },
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_positive_rate": 0.0,
+            "false_negative_count": 0,
+            "high_severity_miss_rate": 0.0,
+            "support": 13,
+            "sample_count": 13
+          }
+        }
+      },
+      "predictions": [
+        {
+          "sample_id": "1b27ac64b9653057",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "pdf",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "annual_report_01.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 3,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "31a71ac7f2a97e7b",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "pdf",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "annual_report_01_rev2.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 3,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "28224f907cb2b3db",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "pdf",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "product_manual_02.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 3,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "101b67158a43be30",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "pdf",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "product_manual_02_rev2.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 3,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "706a2ea2f18912e0",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "ooxml",
+          "extension": "docx",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "quarterly_summary_03.docx",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 5,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "1ac95c49ccb29616",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "ooxml",
+          "extension": "docx",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "quarterly_summary_03_rev2.docx",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 5,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "41ed478ce3123fe3",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "ooxml",
+          "extension": "xlsx",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "financial_pack_04.xlsx",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 5,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "496df4c9cacbc9e2",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "ooxml",
+          "extension": "xlsx",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "financial_pack_04_rev2.xlsx",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 5,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "af77f06588c369b3",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "ooxml",
+          "extension": "docx",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "project_spec_05.docx",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 5,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "277c29f6127ccb95",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "ooxml",
+          "extension": "docx",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "project_spec_05_rev2.docx",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 5,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "497c0772db65da82",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "pdf",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "compliance_appendix_06.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 3,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "8bdc8e2e017fdde9",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "pdf",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "compliance_appendix_06_rev2.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 3,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "27524d59d67f5040",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "pdf",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "operations_handbook_07.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 3,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "142473781870b45a",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "pdf",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "operations_handbook_07_rev2.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 3,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "cb4f4d85089b0b01",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "ooxml",
+          "extension": "xlsx",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "risk_register_08.xlsx",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 5,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "a447d41718112f8c",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "ooxml",
+          "extension": "xlsx",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "risk_register_08_rev2.xlsx",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 5,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "2491eb5b8edc0228",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "pdf",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "site_survey_09.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 3,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "61c85aa5d630d78b",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "pdf",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "site_survey_09_rev2.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 3,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "0362ac90e5ffaa2a",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "ooxml",
+          "extension": "docx",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "engineering_notes_10.docx",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 6,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "111fabf642daae75",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "ooxml",
+          "extension": "docx",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "engineering_notes_10_rev2.docx",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 5,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "134990ba6f7fb469",
+          "label": 0,
+          "scenario": "benign_macro_enabled_office",
+          "file_type": "ooxml",
+          "extension": "xlsm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "finance_template_01.xlsm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 10,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "e34003fe1f54d04f",
+          "label": 0,
+          "scenario": "benign_macro_enabled_office",
+          "file_type": "ooxml",
+          "extension": "xlsm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "finance_template_01_signed.xlsm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "661ad1f9e259f520",
+          "label": 0,
+          "scenario": "benign_macro_enabled_office",
+          "file_type": "ooxml",
+          "extension": "xlsm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "inventory_tool_02.xlsm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "830d7f210f03f192",
+          "label": 0,
+          "scenario": "benign_macro_enabled_office",
+          "file_type": "ooxml",
+          "extension": "xlsm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "inventory_tool_02_signed.xlsm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "72fa48a21b77f686",
+          "label": 0,
+          "scenario": "benign_macro_enabled_office",
+          "file_type": "ooxml",
+          "extension": "docm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "budget_planner_03.docm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "3725b39bf04c8e5e",
+          "label": 0,
+          "scenario": "benign_macro_enabled_office",
+          "file_type": "ooxml",
+          "extension": "docm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "budget_planner_03_signed.docm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "00640dc94175ea6b",
+          "label": 0,
+          "scenario": "benign_macro_enabled_office",
+          "file_type": "ooxml",
+          "extension": "xlsm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "timesheet_pack_04.xlsm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "6dbe80e74a87513e",
+          "label": 0,
+          "scenario": "benign_macro_enabled_office",
+          "file_type": "ooxml",
+          "extension": "xlsm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "timesheet_pack_04_signed.xlsm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "e56316aee990c97b",
+          "label": 0,
+          "scenario": "benign_macro_enabled_office",
+          "file_type": "ooxml",
+          "extension": "docm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "procurement_form_05.docm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "9eb4261be3af4a2e",
+          "label": 0,
+          "scenario": "benign_macro_enabled_office",
+          "file_type": "ooxml",
+          "extension": "docm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "procurement_form_05_signed.docm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "e642f9f71634f566",
+          "label": 0,
+          "scenario": "benign_macro_enabled_office",
+          "file_type": "ooxml",
+          "extension": "xlsm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "ops_tracker_06.xlsm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "28c5e1c04e2c55eb",
+          "label": 0,
+          "scenario": "benign_macro_enabled_office",
+          "file_type": "ooxml",
+          "extension": "xlsm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "ops_tracker_06_signed.xlsm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "916daa7ad2861792",
+          "label": 0,
+          "scenario": "benign_macro_enabled_office",
+          "file_type": "ooxml",
+          "extension": "xlsm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "forecast_model_07.xlsm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "150276c10aa9020e",
+          "label": 0,
+          "scenario": "benign_macro_enabled_office",
+          "file_type": "ooxml",
+          "extension": "xlsm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "forecast_model_07_signed.xlsm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "00deac28ad083825",
+          "label": 0,
+          "scenario": "benign_macro_enabled_office",
+          "file_type": "ooxml",
+          "extension": "docm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "hr_letter_template_08.docm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "7ffa49c58e6cbdec",
+          "label": 0,
+          "scenario": "benign_macro_enabled_office",
+          "file_type": "ooxml",
+          "extension": "docm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "hr_letter_template_08_signed.docm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "4f3e45930230c243",
+          "label": 1,
+          "scenario": "malicious_pdf_ooxml",
+          "file_type": "pdf",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "medium",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW",
+          "overall_status": "Suspicious",
+          "risk_score": 0.75,
+          "filename": "invoice_payload_01.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 3,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "04d267d568432c6a",
+          "label": 1,
+          "scenario": "malicious_pdf_ooxml",
+          "file_type": "pdf",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "medium",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW",
+          "overall_status": "Suspicious",
+          "risk_score": 0.75,
+          "filename": "invoice_payload_01_variant.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 3,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "1801cb42428996d5",
+          "label": 1,
+          "scenario": "malicious_pdf_ooxml",
+          "file_type": "ooxml",
+          "extension": "docx",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "medium",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW",
+          "overall_status": "Suspicious",
+          "risk_score": 0.75,
+          "filename": "proposal_dropper_02.docx",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 8,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "c98e410819dbd054",
+          "label": 1,
+          "scenario": "malicious_pdf_ooxml",
+          "file_type": "ooxml",
+          "extension": "docx",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "medium",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW",
+          "overall_status": "Suspicious",
+          "risk_score": 0.75,
+          "filename": "proposal_dropper_02_variant.docx",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 8,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "2a01aec96a6f86db",
+          "label": 1,
+          "scenario": "malicious_pdf_ooxml",
+          "file_type": "ooxml",
+          "extension": "xlsm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "medium",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW",
+          "overall_status": "Suspicious",
+          "risk_score": 0.75,
+          "filename": "loader_03.docm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "47ae20d7bae05f96",
+          "label": 1,
+          "scenario": "malicious_pdf_ooxml",
+          "file_type": "ooxml",
+          "extension": "xlsm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "medium",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW",
+          "overall_status": "Suspicious",
+          "risk_score": 0.75,
+          "filename": "loader_03_variant.docm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 8,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "04392445ce98f94f",
+          "label": 1,
+          "scenario": "malicious_pdf_ooxml",
+          "file_type": "pdf",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "medium",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW",
+          "overall_status": "Suspicious",
+          "risk_score": 0.75,
+          "filename": "bank_notice_04.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 3,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "74add553bc897e9e",
+          "label": 1,
+          "scenario": "malicious_pdf_ooxml",
+          "file_type": "pdf",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "medium",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW",
+          "overall_status": "Suspicious",
+          "risk_score": 0.75,
+          "filename": "bank_notice_04_variant.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 3,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "347fc72b37b62f49",
+          "label": 1,
+          "scenario": "malicious_pdf_ooxml",
+          "file_type": "ooxml",
+          "extension": "docm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "medium",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW",
+          "overall_status": "Suspicious",
+          "risk_score": 0.75,
+          "filename": "resume_weaponized_05.docm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 8,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "e9f13004df3cdaaf",
+          "label": 1,
+          "scenario": "malicious_pdf_ooxml",
+          "file_type": "ooxml",
+          "extension": "docm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "medium",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW",
+          "overall_status": "Suspicious",
+          "risk_score": 0.75,
+          "filename": "resume_weaponized_05_variant.docm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 7,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "04034f683c99f1f1",
+          "label": 1,
+          "scenario": "malicious_pdf_ooxml",
+          "file_type": "pdf",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "medium",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW",
+          "overall_status": "Suspicious",
+          "risk_score": 0.75,
+          "filename": "shipping_advice_06.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 3,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "4e862de26a3dab69",
+          "label": 1,
+          "scenario": "malicious_pdf_ooxml",
+          "file_type": "pdf",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "medium",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW",
+          "overall_status": "Suspicious",
+          "risk_score": 0.75,
+          "filename": "shipping_advice_06_variant.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 3,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "5650733bd277f56b",
+          "label": 1,
+          "scenario": "malicious_pdf_ooxml",
+          "file_type": "ooxml",
+          "extension": "docx",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "medium",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW",
+          "overall_status": "Suspicious",
+          "risk_score": 0.75,
+          "filename": "policy_update_07.docx",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "23248a7d0d3c09e2",
+          "label": 1,
+          "scenario": "malicious_pdf_ooxml",
+          "file_type": "ooxml",
+          "extension": "docx",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "medium",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW",
+          "overall_status": "Suspicious",
+          "risk_score": 0.75,
+          "filename": "policy_update_07_variant.docx",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "72acba48f4355ea6",
+          "label": 1,
+          "scenario": "nested_archive_abuse",
+          "file_type": "archive",
+          "extension": "zip",
+          "nested_archive": "true",
+          "macro_enabled": "false",
+          "payload_class": "archive",
+          "file_family": "archive_nested_archive",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "BLOCK_AND_QUARANTINE",
+          "overall_status": "Malicious (YARA Match in Archive)",
+          "risk_score": 0.9,
+          "filename": "records_bundle_01.zip",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 8,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "7148f114d3ed41e2",
+          "label": 1,
+          "scenario": "nested_archive_abuse",
+          "file_type": "archive",
+          "extension": "zip",
+          "nested_archive": "true",
+          "macro_enabled": "false",
+          "payload_class": "archive",
+          "file_family": "archive_nested_archive",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "BLOCK_AND_QUARANTINE",
+          "overall_status": "Malicious (YARA Match in Archive)",
+          "risk_score": 0.9,
+          "filename": "records_bundle_01_deep.zip",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 8,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "e411041ef55b6a20",
+          "label": 1,
+          "scenario": "nested_archive_abuse",
+          "file_type": "archive",
+          "extension": "7z",
+          "nested_archive": "true",
+          "macro_enabled": "false",
+          "payload_class": "archive",
+          "file_family": "archive_nested_archive",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "BLOCK_AND_QUARANTINE",
+          "overall_status": "Malicious (YARA Match in Archive)",
+          "risk_score": 0.9,
+          "filename": "claims_archive_02.zip",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 8,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "40da1451e6e8b4f3",
+          "label": 1,
+          "scenario": "nested_archive_abuse",
+          "file_type": "archive",
+          "extension": "7z",
+          "nested_archive": "true",
+          "macro_enabled": "false",
+          "payload_class": "archive",
+          "file_family": "archive_nested_archive",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "BLOCK_AND_QUARANTINE",
+          "overall_status": "Malicious (YARA Match in Archive)",
+          "risk_score": 0.9,
+          "filename": "claims_archive_02_deep.zip",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 8,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "77c068bb931d8480",
+          "label": 1,
+          "scenario": "nested_archive_abuse",
+          "file_type": "archive",
+          "extension": "zip",
+          "nested_archive": "true",
+          "macro_enabled": "false",
+          "payload_class": "archive",
+          "file_family": "archive_nested_archive",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "BLOCK_AND_QUARANTINE",
+          "overall_status": "Malicious (YARA Match in Archive)",
+          "risk_score": 0.9,
+          "filename": "media_pack_03.zip",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 8,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "d34b859782aeb91d",
+          "label": 1,
+          "scenario": "nested_archive_abuse",
+          "file_type": "archive",
+          "extension": "zip",
+          "nested_archive": "true",
+          "macro_enabled": "false",
+          "payload_class": "archive",
+          "file_family": "archive_nested_archive",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "BLOCK_AND_QUARANTINE",
+          "overall_status": "Malicious (YARA Match in Archive)",
+          "risk_score": 0.9,
+          "filename": "media_pack_03_deep.zip",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 8,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "e93e27660ad0209f",
+          "label": 1,
+          "scenario": "nested_archive_abuse",
+          "file_type": "archive",
+          "extension": "zip",
+          "nested_archive": "true",
+          "macro_enabled": "false",
+          "payload_class": "archive",
+          "file_family": "archive_nested_archive",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "BLOCK_AND_QUARANTINE",
+          "overall_status": "Malicious (YARA Match in Archive)",
+          "risk_score": 0.9,
+          "filename": "invoice_batch_04.zip",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 8,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "a4be2bf247632ac5",
+          "label": 1,
+          "scenario": "nested_archive_abuse",
+          "file_type": "archive",
+          "extension": "zip",
+          "nested_archive": "true",
+          "macro_enabled": "false",
+          "payload_class": "archive",
+          "file_family": "archive_nested_archive",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "BLOCK_AND_QUARANTINE",
+          "overall_status": "Malicious (YARA Match in Archive)",
+          "risk_score": 0.9,
+          "filename": "invoice_batch_04_deep.zip",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 8,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "d10502c1de907108",
+          "label": 1,
+          "scenario": "nested_archive_abuse",
+          "file_type": "archive",
+          "extension": "7z",
+          "nested_archive": "true",
+          "macro_enabled": "false",
+          "payload_class": "archive",
+          "file_family": "archive_nested_archive",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "BLOCK_AND_QUARANTINE",
+          "overall_status": "Malicious (YARA Match in Archive)",
+          "risk_score": 0.9,
+          "filename": "design_assets_05.zip",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 8,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "0db1ebe49b0bb1c2",
+          "label": 1,
+          "scenario": "nested_archive_abuse",
+          "file_type": "archive",
+          "extension": "7z",
+          "nested_archive": "true",
+          "macro_enabled": "false",
+          "payload_class": "archive",
+          "file_family": "archive_nested_archive",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "BLOCK_AND_QUARANTINE",
+          "overall_status": "Malicious (YARA Match in Archive)",
+          "risk_score": 0.9,
+          "filename": "design_assets_05_deep.zip",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 8,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "3b3422a61acd14c2",
+          "label": 1,
+          "scenario": "nested_archive_abuse",
+          "file_type": "archive",
+          "extension": "zip",
+          "nested_archive": "true",
+          "macro_enabled": "false",
+          "payload_class": "archive",
+          "file_family": "archive_nested_archive",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "BLOCK_AND_QUARANTINE",
+          "overall_status": "Malicious (YARA Match in Archive)",
+          "risk_score": 0.9,
+          "filename": "customer_docs_06.zip",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 8,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "366a61fa01375ca2",
+          "label": 1,
+          "scenario": "nested_archive_abuse",
+          "file_type": "archive",
+          "extension": "zip",
+          "nested_archive": "true",
+          "macro_enabled": "false",
+          "payload_class": "archive",
+          "file_family": "archive_nested_archive",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "BLOCK_AND_QUARANTINE",
+          "overall_status": "Malicious (YARA Match in Archive)",
+          "risk_score": 0.9,
+          "filename": "customer_docs_06_deep.zip",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 8,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "42f3eeeb75266bf1",
+          "label": 1,
+          "scenario": "mime_extension_mismatch",
+          "file_type": "unknown",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW_BLOCK",
+          "overall_status": "Suspicious (Command Execution Indicators)",
+          "risk_score": 0.8,
+          "filename": "statement_01.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 7,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "23fddf6e6efd0db2",
+          "label": 1,
+          "scenario": "mime_extension_mismatch",
+          "file_type": "unknown",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW_BLOCK",
+          "overall_status": "Suspicious (Command Execution Indicators)",
+          "risk_score": 0.8,
+          "filename": "statement_01_alt.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 7,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "1e10bf7ecb514cca",
+          "label": 1,
+          "scenario": "mime_extension_mismatch",
+          "file_type": "unknown",
+          "extension": "docx",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW_BLOCK",
+          "overall_status": "Suspicious (Command Execution Indicators)",
+          "risk_score": 0.8,
+          "filename": "report_02.docx",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 7,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "1713d1538c79a39e",
+          "label": 1,
+          "scenario": "mime_extension_mismatch",
+          "file_type": "unknown",
+          "extension": "docx",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW_BLOCK",
+          "overall_status": "Suspicious (Command Execution Indicators)",
+          "risk_score": 0.8,
+          "filename": "report_02_alt.docx",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 7,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "530012fe37934670",
+          "label": 1,
+          "scenario": "mime_extension_mismatch",
+          "file_type": "unknown",
+          "extension": "xlsx",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW_BLOCK",
+          "overall_status": "Suspicious (Command Execution Indicators)",
+          "risk_score": 0.8,
+          "filename": "invoice_03.xlsx",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 7,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "bcec7f1052a86320",
+          "label": 1,
+          "scenario": "mime_extension_mismatch",
+          "file_type": "unknown",
+          "extension": "xlsx",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW_BLOCK",
+          "overall_status": "Suspicious (Command Execution Indicators)",
+          "risk_score": 0.8,
+          "filename": "invoice_03_alt.xlsx",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 7,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "b76fdc1bf7837e06",
+          "label": 1,
+          "scenario": "mime_extension_mismatch",
+          "file_type": "unknown",
+          "extension": "txt",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "other",
+          "file_family": "script_text",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW_BLOCK",
+          "overall_status": "Suspicious (Command Execution Indicators)",
+          "risk_score": 0.8,
+          "filename": "meeting_notes_04.txt",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 7,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "202562bb36c6d77b",
+          "label": 1,
+          "scenario": "mime_extension_mismatch",
+          "file_type": "unknown",
+          "extension": "txt",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "other",
+          "file_family": "script_text",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW_BLOCK",
+          "overall_status": "Suspicious (Command Execution Indicators)",
+          "risk_score": 0.8,
+          "filename": "meeting_notes_04_alt.txt",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 7,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "fcf42523f8345669",
+          "label": 1,
+          "scenario": "mime_extension_mismatch",
+          "file_type": "unknown",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW_BLOCK",
+          "overall_status": "Suspicious (Command Execution Indicators)",
+          "risk_score": 0.8,
+          "filename": "quotation_05.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 7,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "6e59d46349955e69",
+          "label": 1,
+          "scenario": "mime_extension_mismatch",
+          "file_type": "unknown",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW_BLOCK",
+          "overall_status": "Suspicious (Command Execution Indicators)",
+          "risk_score": 0.8,
+          "filename": "quotation_05_alt.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 7,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "d0050305fa6b19a4",
+          "label": 0,
+          "scenario": "benign_complex_pdf_ooxml",
+          "file_type": "pdf",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "annual_report_2025.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 3,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "22e9000b2fe2e811",
+          "label": 0,
+          "scenario": "benign_macro_enabled_office",
+          "file_type": "ooxml",
+          "extension": "xlsm",
+          "nested_archive": "false",
+          "macro_enabled": "true",
+          "payload_class": "document",
+          "file_family": "office_macro",
+          "severity_band": "low",
+          "high_severity": false,
+          "predicted_positive": 0,
+          "recommended_action": "ALLOW_UPLOAD",
+          "overall_status": "Safe",
+          "risk_score": 0.1,
+          "filename": "finance_template.xlsm",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 9,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "f909fb58b1755c95",
+          "label": 1,
+          "scenario": "malicious_pdf_ooxml",
+          "file_type": "pdf",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "medium",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW",
+          "overall_status": "Suspicious",
+          "risk_score": 0.75,
+          "filename": "payload_invoice.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 3,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "e171855f73bc42fa",
+          "label": 1,
+          "scenario": "nested_archive_abuse",
+          "file_type": "archive",
+          "extension": "zip",
+          "nested_archive": "true",
+          "macro_enabled": "false",
+          "payload_class": "archive",
+          "file_family": "archive_nested_archive",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "BLOCK_AND_QUARANTINE",
+          "overall_status": "Malicious (YARA Match in Archive)",
+          "risk_score": 0.9,
+          "filename": "docs_bundle.zip",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 8,
+          "dynamic_ioc_count": 0
+        },
+        {
+          "sample_id": "3240498e594bd263",
+          "label": 1,
+          "scenario": "mime_extension_mismatch",
+          "file_type": "unknown",
+          "extension": "pdf",
+          "nested_archive": "false",
+          "macro_enabled": "false",
+          "payload_class": "document",
+          "file_family": "pdf",
+          "severity_band": "high",
+          "high_severity": true,
+          "predicted_positive": 1,
+          "recommended_action": "FLAG_FOR_REVIEW_BLOCK",
+          "overall_status": "Suspicious (Command Execution Indicators)",
+          "risk_score": 0.8,
+          "filename": "statement.pdf",
+          "dynamic_requested": false,
+          "dynamic_request_decision": "not_requested",
+          "dynamic_skip_reason": "dynamic_disabled",
+          "dynamic_policy_profile": "baseline_v1",
+          "dynamic_reason_codes": [
+            "dynamic_disabled"
+          ],
+          "dynamic_status": "not_requested",
+          "dynamic_added_ioc_count": 0,
+          "dynamic_added_evidence_count": 0,
+          "dynamic_ioc_types": [],
+          "static_ioc_count": 7,
+          "dynamic_ioc_count": 0
+        }
+      ],
+      "dynamic_policy": {
+        "overall": {
+          "sample_count": 77,
+          "request_rate": 0.0,
+          "not_requested_rate": 1.0,
+          "skip_rate": 0.0,
+          "missing_reason_code_count": 0,
+          "completed_rate": 0.0,
+          "unavailable_rate": 0.0,
+          "failed_rate": 0.0,
+          "running_or_deferred_rate": 0.0,
+          "dynamic_not_requested_rate": 1.0,
+          "requested_but_provider_unavailable_count": 0,
+          "row_count": 77
+        },
+        "request_decisions": {
+          "not_requested": {
+            "count": 77,
+            "rate": 1.0
+          }
+        },
+        "skip_reasons": {
+          "dynamic_disabled": {
+            "count": 77,
+            "rate": 1.0
+          }
+        },
+        "reason_codes": {
+          "dynamic_disabled": {
+            "count": 77,
+            "rate": 1.0
+          }
+        },
+        "policy_profiles": {
+          "baseline_v1": {
+            "count": 77,
+            "rate": 1.0
+          }
+        },
+        "dynamic_states": {
+          "distribution": {
+            "not_requested": {
+              "count": 77,
+              "rate": 1.0
+            }
+          },
+          "completed_rate": 0.0,
+          "unavailable_rate": 0.0,
+          "failed_rate": 0.0,
+          "running_or_deferred_rate": 0.0,
+          "not_requested_rate": 1.0,
+          "requested_but_provider_unavailable_count": 0
+        },
+        "slices": {
+          "file_family": {
+            "archive_nested_archive": {
+              "sample_count": 13,
+              "benign_count": 0,
+              "malicious_count": 13,
+              "benign_only": false,
+              "request_rate": 0.0,
+              "not_requested_rate": 1.0,
+              "skip_rate": 0.0,
+              "completed_rate": 0.0,
+              "unavailable_rate": 0.0,
+              "failed_rate": 0.0,
+              "running_or_deferred_rate": 0.0,
+              "dynamic_not_requested_rate": 1.0,
+              "requested_but_provider_unavailable_count": 0,
+              "request_decisions": {
+                "not_requested": {
+                  "count": 13,
+                  "rate": 1.0
+                }
+              },
+              "skip_reasons": {
+                "dynamic_disabled": {
+                  "count": 13,
+                  "rate": 1.0
+                }
+              },
+              "policy_profiles": {
+                "baseline_v1": {
+                  "count": 13,
+                  "rate": 1.0
+                }
+              },
+              "reason_codes": {
+                "dynamic_disabled": {
+                  "count": 13,
+                  "rate": 1.0
+                }
+              },
+              "dynamic_states": {
+                "not_requested": {
+                  "count": 13,
+                  "rate": 1.0
+                }
+              },
+              "missing_reason_code_count": 0
+            },
+            "office_macro": {
+              "sample_count": 39,
+              "benign_count": 27,
+              "malicious_count": 12,
+              "benign_only": false,
+              "request_rate": 0.0,
+              "not_requested_rate": 1.0,
+              "skip_rate": 0.0,
+              "completed_rate": 0.0,
+              "unavailable_rate": 0.0,
+              "failed_rate": 0.0,
+              "running_or_deferred_rate": 0.0,
+              "dynamic_not_requested_rate": 1.0,
+              "requested_but_provider_unavailable_count": 0,
+              "request_decisions": {
+                "not_requested": {
+                  "count": 39,
+                  "rate": 1.0
+                }
+              },
+              "skip_reasons": {
+                "dynamic_disabled": {
+                  "count": 39,
+                  "rate": 1.0
+                }
+              },
+              "policy_profiles": {
+                "baseline_v1": {
+                  "count": 39,
+                  "rate": 1.0
+                }
+              },
+              "reason_codes": {
+                "dynamic_disabled": {
+                  "count": 39,
+                  "rate": 1.0
+                }
+              },
+              "dynamic_states": {
+                "not_requested": {
+                  "count": 39,
+                  "rate": 1.0
+                }
+              },
+              "missing_reason_code_count": 0
+            },
+            "pdf": {
+              "sample_count": 23,
+              "benign_count": 11,
+              "malicious_count": 12,
+              "benign_only": false,
+              "request_rate": 0.0,
+              "not_requested_rate": 1.0,
+              "skip_rate": 0.0,
+              "completed_rate": 0.0,
+              "unavailable_rate": 0.0,
+              "failed_rate": 0.0,
+              "running_or_deferred_rate": 0.0,
+              "dynamic_not_requested_rate": 1.0,
+              "requested_but_provider_unavailable_count": 0,
+              "request_decisions": {
+                "not_requested": {
+                  "count": 23,
+                  "rate": 1.0
+                }
+              },
+              "skip_reasons": {
+                "dynamic_disabled": {
+                  "count": 23,
+                  "rate": 1.0
+                }
+              },
+              "policy_profiles": {
+                "baseline_v1": {
+                  "count": 23,
+                  "rate": 1.0
+                }
+              },
+              "reason_codes": {
+                "dynamic_disabled": {
+                  "count": 23,
+                  "rate": 1.0
+                }
+              },
+              "dynamic_states": {
+                "not_requested": {
+                  "count": 23,
+                  "rate": 1.0
+                }
+              },
+              "missing_reason_code_count": 0
+            },
+            "script_text": {
+              "sample_count": 2,
+              "benign_count": 0,
+              "malicious_count": 2,
+              "benign_only": false,
+              "request_rate": 0.0,
+              "not_requested_rate": 1.0,
+              "skip_rate": 0.0,
+              "completed_rate": 0.0,
+              "unavailable_rate": 0.0,
+              "failed_rate": 0.0,
+              "running_or_deferred_rate": 0.0,
+              "dynamic_not_requested_rate": 1.0,
+              "requested_but_provider_unavailable_count": 0,
+              "request_decisions": {
+                "not_requested": {
+                  "count": 2,
+                  "rate": 1.0
+                }
+              },
+              "skip_reasons": {
+                "dynamic_disabled": {
+                  "count": 2,
+                  "rate": 1.0
+                }
+              },
+              "policy_profiles": {
+                "baseline_v1": {
+                  "count": 2,
+                  "rate": 1.0
+                }
+              },
+              "reason_codes": {
+                "dynamic_disabled": {
+                  "count": 2,
+                  "rate": 1.0
+                }
+              },
+              "dynamic_states": {
+                "not_requested": {
+                  "count": 2,
+                  "rate": 1.0
+                }
+              },
+              "missing_reason_code_count": 0
+            }
+          },
+          "severity_band": {
+            "high": {
+              "sample_count": 24,
+              "benign_count": 0,
+              "malicious_count": 24,
+              "benign_only": false,
+              "request_rate": 0.0,
+              "not_requested_rate": 1.0,
+              "skip_rate": 0.0,
+              "completed_rate": 0.0,
+              "unavailable_rate": 0.0,
+              "failed_rate": 0.0,
+              "running_or_deferred_rate": 0.0,
+              "dynamic_not_requested_rate": 1.0,
+              "requested_but_provider_unavailable_count": 0,
+              "request_decisions": {
+                "not_requested": {
+                  "count": 24,
+                  "rate": 1.0
+                }
+              },
+              "skip_reasons": {
+                "dynamic_disabled": {
+                  "count": 24,
+                  "rate": 1.0
+                }
+              },
+              "policy_profiles": {
+                "baseline_v1": {
+                  "count": 24,
+                  "rate": 1.0
+                }
+              },
+              "reason_codes": {
+                "dynamic_disabled": {
+                  "count": 24,
+                  "rate": 1.0
+                }
+              },
+              "dynamic_states": {
+                "not_requested": {
+                  "count": 24,
+                  "rate": 1.0
+                }
+              },
+              "missing_reason_code_count": 0
+            },
+            "low": {
+              "sample_count": 38,
+              "benign_count": 38,
+              "malicious_count": 0,
+              "benign_only": true,
+              "request_rate": 0.0,
+              "not_requested_rate": 1.0,
+              "skip_rate": 0.0,
+              "completed_rate": 0.0,
+              "unavailable_rate": 0.0,
+              "failed_rate": 0.0,
+              "running_or_deferred_rate": 0.0,
+              "dynamic_not_requested_rate": 1.0,
+              "requested_but_provider_unavailable_count": 0,
+              "request_decisions": {
+                "not_requested": {
+                  "count": 38,
+                  "rate": 1.0
+                }
+              },
+              "skip_reasons": {
+                "dynamic_disabled": {
+                  "count": 38,
+                  "rate": 1.0
+                }
+              },
+              "policy_profiles": {
+                "baseline_v1": {
+                  "count": 38,
+                  "rate": 1.0
+                }
+              },
+              "reason_codes": {
+                "dynamic_disabled": {
+                  "count": 38,
+                  "rate": 1.0
+                }
+              },
+              "dynamic_states": {
+                "not_requested": {
+                  "count": 38,
+                  "rate": 1.0
+                }
+              },
+              "missing_reason_code_count": 0
+            },
+            "medium": {
+              "sample_count": 15,
+              "benign_count": 0,
+              "malicious_count": 15,
+              "benign_only": false,
+              "request_rate": 0.0,
+              "not_requested_rate": 1.0,
+              "skip_rate": 0.0,
+              "completed_rate": 0.0,
+              "unavailable_rate": 0.0,
+              "failed_rate": 0.0,
+              "running_or_deferred_rate": 0.0,
+              "dynamic_not_requested_rate": 1.0,
+              "requested_but_provider_unavailable_count": 0,
+              "request_decisions": {
+                "not_requested": {
+                  "count": 15,
+                  "rate": 1.0
+                }
+              },
+              "skip_reasons": {
+                "dynamic_disabled": {
+                  "count": 15,
+                  "rate": 1.0
+                }
+              },
+              "policy_profiles": {
+                "baseline_v1": {
+                  "count": 15,
+                  "rate": 1.0
+                }
+              },
+              "reason_codes": {
+                "dynamic_disabled": {
+                  "count": 15,
+                  "rate": 1.0
+                }
+              },
+              "dynamic_states": {
+                "not_requested": {
+                  "count": 15,
+                  "rate": 1.0
+                }
+              },
+              "missing_reason_code_count": 0
+            }
+          },
+          "family_severity": {
+            "archive_nested_archive__high": {
+              "sample_count": 13,
+              "benign_count": 0,
+              "malicious_count": 13,
+              "benign_only": false,
+              "request_rate": 0.0,
+              "not_requested_rate": 1.0,
+              "skip_rate": 0.0,
+              "completed_rate": 0.0,
+              "unavailable_rate": 0.0,
+              "failed_rate": 0.0,
+              "running_or_deferred_rate": 0.0,
+              "dynamic_not_requested_rate": 1.0,
+              "requested_but_provider_unavailable_count": 0,
+              "request_decisions": {
+                "not_requested": {
+                  "count": 13,
+                  "rate": 1.0
+                }
+              },
+              "skip_reasons": {
+                "dynamic_disabled": {
+                  "count": 13,
+                  "rate": 1.0
+                }
+              },
+              "policy_profiles": {
+                "baseline_v1": {
+                  "count": 13,
+                  "rate": 1.0
+                }
+              },
+              "reason_codes": {
+                "dynamic_disabled": {
+                  "count": 13,
+                  "rate": 1.0
+                }
+              },
+              "dynamic_states": {
+                "not_requested": {
+                  "count": 13,
+                  "rate": 1.0
+                }
+              },
+              "missing_reason_code_count": 0
+            },
+            "office_macro__high": {
+              "sample_count": 4,
+              "benign_count": 0,
+              "malicious_count": 4,
+              "benign_only": false,
+              "request_rate": 0.0,
+              "not_requested_rate": 1.0,
+              "skip_rate": 0.0,
+              "completed_rate": 0.0,
+              "unavailable_rate": 0.0,
+              "failed_rate": 0.0,
+              "running_or_deferred_rate": 0.0,
+              "dynamic_not_requested_rate": 1.0,
+              "requested_but_provider_unavailable_count": 0,
+              "request_decisions": {
+                "not_requested": {
+                  "count": 4,
+                  "rate": 1.0
+                }
+              },
+              "skip_reasons": {
+                "dynamic_disabled": {
+                  "count": 4,
+                  "rate": 1.0
+                }
+              },
+              "policy_profiles": {
+                "baseline_v1": {
+                  "count": 4,
+                  "rate": 1.0
+                }
+              },
+              "reason_codes": {
+                "dynamic_disabled": {
+                  "count": 4,
+                  "rate": 1.0
+                }
+              },
+              "dynamic_states": {
+                "not_requested": {
+                  "count": 4,
+                  "rate": 1.0
+                }
+              },
+              "missing_reason_code_count": 0
+            },
+            "office_macro__low": {
+              "sample_count": 27,
+              "benign_count": 27,
+              "malicious_count": 0,
+              "benign_only": true,
+              "request_rate": 0.0,
+              "not_requested_rate": 1.0,
+              "skip_rate": 0.0,
+              "completed_rate": 0.0,
+              "unavailable_rate": 0.0,
+              "failed_rate": 0.0,
+              "running_or_deferred_rate": 0.0,
+              "dynamic_not_requested_rate": 1.0,
+              "requested_but_provider_unavailable_count": 0,
+              "request_decisions": {
+                "not_requested": {
+                  "count": 27,
+                  "rate": 1.0
+                }
+              },
+              "skip_reasons": {
+                "dynamic_disabled": {
+                  "count": 27,
+                  "rate": 1.0
+                }
+              },
+              "policy_profiles": {
+                "baseline_v1": {
+                  "count": 27,
+                  "rate": 1.0
+                }
+              },
+              "reason_codes": {
+                "dynamic_disabled": {
+                  "count": 27,
+                  "rate": 1.0
+                }
+              },
+              "dynamic_states": {
+                "not_requested": {
+                  "count": 27,
+                  "rate": 1.0
+                }
+              },
+              "missing_reason_code_count": 0
+            },
+            "office_macro__medium": {
+              "sample_count": 8,
+              "benign_count": 0,
+              "malicious_count": 8,
+              "benign_only": false,
+              "request_rate": 0.0,
+              "not_requested_rate": 1.0,
+              "skip_rate": 0.0,
+              "completed_rate": 0.0,
+              "unavailable_rate": 0.0,
+              "failed_rate": 0.0,
+              "running_or_deferred_rate": 0.0,
+              "dynamic_not_requested_rate": 1.0,
+              "requested_but_provider_unavailable_count": 0,
+              "request_decisions": {
+                "not_requested": {
+                  "count": 8,
+                  "rate": 1.0
+                }
+              },
+              "skip_reasons": {
+                "dynamic_disabled": {
+                  "count": 8,
+                  "rate": 1.0
+                }
+              },
+              "policy_profiles": {
+                "baseline_v1": {
+                  "count": 8,
+                  "rate": 1.0
+                }
+              },
+              "reason_codes": {
+                "dynamic_disabled": {
+                  "count": 8,
+                  "rate": 1.0
+                }
+              },
+              "dynamic_states": {
+                "not_requested": {
+                  "count": 8,
+                  "rate": 1.0
+                }
+              },
+              "missing_reason_code_count": 0
+            },
+            "pdf__high": {
+              "sample_count": 5,
+              "benign_count": 0,
+              "malicious_count": 5,
+              "benign_only": false,
+              "request_rate": 0.0,
+              "not_requested_rate": 1.0,
+              "skip_rate": 0.0,
+              "completed_rate": 0.0,
+              "unavailable_rate": 0.0,
+              "failed_rate": 0.0,
+              "running_or_deferred_rate": 0.0,
+              "dynamic_not_requested_rate": 1.0,
+              "requested_but_provider_unavailable_count": 0,
+              "request_decisions": {
+                "not_requested": {
+                  "count": 5,
+                  "rate": 1.0
+                }
+              },
+              "skip_reasons": {
+                "dynamic_disabled": {
+                  "count": 5,
+                  "rate": 1.0
+                }
+              },
+              "policy_profiles": {
+                "baseline_v1": {
+                  "count": 5,
+                  "rate": 1.0
+                }
+              },
+              "reason_codes": {
+                "dynamic_disabled": {
+                  "count": 5,
+                  "rate": 1.0
+                }
+              },
+              "dynamic_states": {
+                "not_requested": {
+                  "count": 5,
+                  "rate": 1.0
+                }
+              },
+              "missing_reason_code_count": 0
+            },
+            "pdf__low": {
+              "sample_count": 11,
+              "benign_count": 11,
+              "malicious_count": 0,
+              "benign_only": true,
+              "request_rate": 0.0,
+              "not_requested_rate": 1.0,
+              "skip_rate": 0.0,
+              "completed_rate": 0.0,
+              "unavailable_rate": 0.0,
+              "failed_rate": 0.0,
+              "running_or_deferred_rate": 0.0,
+              "dynamic_not_requested_rate": 1.0,
+              "requested_but_provider_unavailable_count": 0,
+              "request_decisions": {
+                "not_requested": {
+                  "count": 11,
+                  "rate": 1.0
+                }
+              },
+              "skip_reasons": {
+                "dynamic_disabled": {
+                  "count": 11,
+                  "rate": 1.0
+                }
+              },
+              "policy_profiles": {
+                "baseline_v1": {
+                  "count": 11,
+                  "rate": 1.0
+                }
+              },
+              "reason_codes": {
+                "dynamic_disabled": {
+                  "count": 11,
+                  "rate": 1.0
+                }
+              },
+              "dynamic_states": {
+                "not_requested": {
+                  "count": 11,
+                  "rate": 1.0
+                }
+              },
+              "missing_reason_code_count": 0
+            },
+            "pdf__medium": {
+              "sample_count": 7,
+              "benign_count": 0,
+              "malicious_count": 7,
+              "benign_only": false,
+              "request_rate": 0.0,
+              "not_requested_rate": 1.0,
+              "skip_rate": 0.0,
+              "completed_rate": 0.0,
+              "unavailable_rate": 0.0,
+              "failed_rate": 0.0,
+              "running_or_deferred_rate": 0.0,
+              "dynamic_not_requested_rate": 1.0,
+              "requested_but_provider_unavailable_count": 0,
+              "request_decisions": {
+                "not_requested": {
+                  "count": 7,
+                  "rate": 1.0
+                }
+              },
+              "skip_reasons": {
+                "dynamic_disabled": {
+                  "count": 7,
+                  "rate": 1.0
+                }
+              },
+              "policy_profiles": {
+                "baseline_v1": {
+                  "count": 7,
+                  "rate": 1.0
+                }
+              },
+              "reason_codes": {
+                "dynamic_disabled": {
+                  "count": 7,
+                  "rate": 1.0
+                }
+              },
+              "dynamic_states": {
+                "not_requested": {
+                  "count": 7,
+                  "rate": 1.0
+                }
+              },
+              "missing_reason_code_count": 0
+            },
+            "script_text__high": {
+              "sample_count": 2,
+              "benign_count": 0,
+              "malicious_count": 2,
+              "benign_only": false,
+              "request_rate": 0.0,
+              "not_requested_rate": 1.0,
+              "skip_rate": 0.0,
+              "completed_rate": 0.0,
+              "unavailable_rate": 0.0,
+              "failed_rate": 0.0,
+              "running_or_deferred_rate": 0.0,
+              "dynamic_not_requested_rate": 1.0,
+              "requested_but_provider_unavailable_count": 0,
+              "request_decisions": {
+                "not_requested": {
+                  "count": 2,
+                  "rate": 1.0
+                }
+              },
+              "skip_reasons": {
+                "dynamic_disabled": {
+                  "count": 2,
+                  "rate": 1.0
+                }
+              },
+              "policy_profiles": {
+                "baseline_v1": {
+                  "count": 2,
+                  "rate": 1.0
+                }
+              },
+              "reason_codes": {
+                "dynamic_disabled": {
+                  "count": 2,
+                  "rate": 1.0
+                }
+              },
+              "dynamic_states": {
+                "not_requested": {
+                  "count": 2,
+                  "rate": 1.0
+                }
+              },
+              "missing_reason_code_count": 0
+            }
+          },
+          "request_decision": {
+            "not_requested": {
+              "sample_count": 77,
+              "benign_count": 38,
+              "malicious_count": 39,
+              "benign_only": false,
+              "request_rate": 0.0,
+              "not_requested_rate": 1.0,
+              "skip_rate": 0.0,
+              "completed_rate": 0.0,
+              "unavailable_rate": 0.0,
+              "failed_rate": 0.0,
+              "running_or_deferred_rate": 0.0,
+              "dynamic_not_requested_rate": 1.0,
+              "requested_but_provider_unavailable_count": 0,
+              "request_decisions": {
+                "not_requested": {
+                  "count": 77,
+                  "rate": 1.0
+                }
+              },
+              "skip_reasons": {
+                "dynamic_disabled": {
+                  "count": 77,
+                  "rate": 1.0
+                }
+              },
+              "policy_profiles": {
+                "baseline_v1": {
+                  "count": 77,
+                  "rate": 1.0
+                }
+              },
+              "reason_codes": {
+                "dynamic_disabled": {
+                  "count": 77,
+                  "rate": 1.0
+                }
+              },
+              "dynamic_states": {
+                "not_requested": {
+                  "count": 77,
+                  "rate": 1.0
+                }
+              },
+              "missing_reason_code_count": 0
+            }
+          },
+          "reason_code": {
+            "dynamic_disabled": {
+              "sample_count": 77,
+              "benign_count": 38,
+              "malicious_count": 39,
+              "benign_only": false,
+              "request_rate": 0.0,
+              "not_requested_rate": 1.0,
+              "skip_rate": 0.0,
+              "completed_rate": 0.0,
+              "unavailable_rate": 0.0,
+              "failed_rate": 0.0,
+              "running_or_deferred_rate": 0.0,
+              "dynamic_not_requested_rate": 1.0,
+              "requested_but_provider_unavailable_count": 0,
+              "request_decisions": {
+                "not_requested": {
+                  "count": 77,
+                  "rate": 1.0
+                }
+              },
+              "skip_reasons": {
+                "dynamic_disabled": {
+                  "count": 77,
+                  "rate": 1.0
+                }
+              },
+              "policy_profiles": {
+                "baseline_v1": {
+                  "count": 77,
+                  "rate": 1.0
+                }
+              },
+              "reason_codes": {
+                "dynamic_disabled": {
+                  "count": 77,
+                  "rate": 1.0
+                }
+              },
+              "dynamic_states": {
+                "not_requested": {
+                  "count": 77,
+                  "rate": 1.0
+                }
+              },
+              "missing_reason_code_count": 0
+            }
+          }
+        },
+        "informational_deltas": {
+          "sample_count": 77,
+          "samples_with_dynamic_completed": 0,
+          "samples_with_dynamic_delta": 0,
+          "additional_iocs_from_dynamic_total": 0,
+          "additional_evidence_items_from_dynamic_total": 0,
+          "avg_additional_iocs_per_completed_sample": 0.0,
+          "avg_additional_evidence_per_completed_sample": 0.0,
+          "ioc_source_counts": {
+            "static_or_non_dynamic": 506,
+            "dynamic": 0
+          },
+          "static_vs_dynamic_source_rates": {
+            "static_or_non_dynamic_rate": 1.0,
+            "dynamic_rate": 0.0
+          },
+          "dynamic_origin_correlation_inputs": {
+            "total": 0,
+            "by_type": {}
+          },
+          "limitations": [
+            "No completed dynamic-analysis samples were observed in this run; IOC/evidence deltas are informational only.",
+            "Dynamic provider produced no additional evidence/IOCs; this does not prove dynamic analysis has no value."
+          ]
+        },
+        "limitations": [
+          "Dynamic-policy metrics reflect verdict dynamic_analysis state only; they are not inferred from logs.",
+          "Quality/value gates for dynamic IOC/evidence uplift are intentionally informational until live provider data is established."
+        ],
+        "provider_readiness": {
+          "run_label": "disabled",
+          "provider_name": "none",
+          "configured": false,
+          "available": false,
+          "validation_state": "live_not_validated",
+          "validation_reason": "validation_provider_mismatch"
+        }
+      },
+      "dynamic_provider_status": {
+        "enabled": false,
+        "requested_provider": "none",
+        "active_provider": "none",
+        "configured": false,
+        "available": false,
+        "misconfigured": false,
+        "readiness_state": "disabled",
+        "reason": "benchmark_dynamic_disabled",
+        "poll_interval_seconds": 0.05,
+        "max_wait_seconds": 1.0,
+        "policy_profile": "baseline_v1",
+        "details": {},
+        "validation": {
+          "exists": true,
+          "artifact_path": "C:\\backup 10-10-25\\04-17am updates\\SQL_Injection_Prevention\\backend\\data\\benchmarks\\provider_validation\\file_dynamic_provider_validation_latest.json",
+          "validation_state": "live_not_validated",
+          "validated": false,
+          "reason": "validation_provider_mismatch",
+          "checked_at": "2026-04-08T16:23:31.564406+00:00",
+          "provider": "http",
+          "provider_base_url": null,
+          "provider_match": false,
+          "base_url_match": true
+        }
+      },
+      "dynamic_provider_run_label": "disabled"
+    }
+  },
+  "current_metrics": {
+    "file.triage": {
+      "confusion_matrix": {
+        "tp": 39,
+        "fp": 0,
+        "tn": 38,
+        "fn": 0
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_count": 0,
+      "high_severity_miss_rate": 0.0,
+      "support": 77
+    }
+  },
+  "corpus": {
+    "file": {
+      "path": "backend\\data\\corpus\\file\\processed\\file_corpus_latest.csv",
+      "hash_sha256": "97510cb3b6878a025467403ec2a0c9c7130f07d5b93fa4c5bb1e014a91a4b627",
+      "version": "latest",
+      "rows": 77,
+      "labels": {
+        "1": 39,
+        "0": 38
+      },
+      "scenarios": {
+        "benign_complex_pdf_ooxml": 21,
+        "benign_macro_enabled_office": 17,
+        "malicious_pdf_ooxml": 15,
+        "nested_archive_abuse": 13,
+        "mime_extension_mismatch": 11
+      },
+      "benchmark_groups": {
+        "unknown": 77
+      }
+    }
+  },
+  "discovery": {
+    "sql": {
+      "raw_files": [
+        "backend\\data\\corpus\\sql\\raw\\sql_adversarial_heldout.csv",
+        "backend\\data\\corpus\\sql\\raw\\sql_corpus_seed.csv",
+        "backend\\data\\corpus\\sql\\raw\\sql_corpus_template.csv",
+        "backend\\data\\corpus\\sql\\raw\\sql_online_weaklabels.csv",
+        "backend\\data\\corpus\\sql\\raw\\sql_online_weaklabels_report.json",
+        "backend\\data\\corpus\\sql\\raw\\sql_request_response_context_latest.csv",
+        "backend\\data\\corpus\\sql\\raw\\sql_request_response_context_report_latest.json"
+      ],
+      "test_files": [
+        "backend\\tests\\security_simulations\\test_sql_injection_vectors.py",
+        "backend\\tests\\test_defender_actions_sql_response.py",
+        "backend\\tests\\test_sql_dynamic_construction_risk.py",
+        "backend\\tests\\test_sql_enforcer_policy.py",
+        "backend\\tests\\test_sql_heuristics.py",
+        "backend\\tests\\test_sql_precision_v2.py",
+        "backend\\tests\\test_sql_risk_floor.py",
+        "backend\\tests\\test_sql_threat_corpus_builder.py"
+      ]
+    },
+    "file": {
+      "raw_files": [
+        "backend\\data\\corpus\\file\\raw\\file_corpus_seed.csv",
+        "backend\\data\\corpus\\file\\raw\\file_corpus_template.csv"
+      ],
+      "test_files": [
+        "backend\\tests\\test_defender_file_retrain.py",
+        "backend\\tests\\test_file_analyzer_queue_first.py",
+        "backend\\tests\\test_file_dynamic_provider.py",
+        "backend\\tests\\test_file_scan_gap_regression.py",
+        "backend\\tests\\test_file_scan_html_allowed.py",
+        "backend\\tests\\test_file_scan_industry_hardening.py",
+        "backend\\tests\\test_file_scan_pdf_passive_context.py",
+        "backend\\tests\\test_file_scan_powershell_shells.py",
+        "backend\\tests\\test_file_scan_queue_factory.py",
+        "backend\\tests\\test_file_scan_queue_service.py",
+        "backend\\tests\\test_file_scan_realworld_rules.py",
+        "backend\\tests\\test_file_scan_session_recovery.py",
+        "backend\\tests\\test_file_scan_structured_verdict.py"
+      ]
+    },
+    "phishing": {
+      "raw_files": [
+        "backend\\data\\corpus\\phishing\\raw\\phishing_corpus_seed.csv",
+        "backend\\data\\corpus\\phishing\\raw\\phishing_corpus_template.csv",
+        "backend\\data\\corpus\\phishing\\raw\\phishing_online_weaklabels.csv",
+        "backend\\data\\corpus\\phishing\\raw\\phishing_online_weaklabels_report.json"
+      ],
+      "test_files": [
+        "backend\\tests\\test_defender_spam_auto_retrain.py",
+        "backend\\tests\\test_defender_spam_promotion_gate.py",
+        "backend\\tests\\test_spam_autopipeline.py",
+        "backend\\tests\\test_spam_governance_audit.py",
+        "backend\\tests\\test_spam_phishing_v2.py",
+        "backend\\tests\\test_spam_threat_corpus_builder.py"
+      ]
+    }
+  },
+  "execution": {
+    "passed": true,
+    "reasons": []
+  },
+  "quality_gate": {
+    "passed": true,
+    "reasons": [],
+    "components": {
+      "domain_metrics": {
+        "passed": true,
+        "reasons": []
+      },
+      "sql_slice_metrics": {
+        "passed": true,
+        "reasons": []
+      },
+      "sql_heldout_metrics": {
+        "passed": true,
+        "reasons": []
+      },
+      "file_dynamic_policy_metrics": {
+        "passed": true,
+        "reasons": []
+      }
+    }
+  },
+  "gate": {
+    "passed": true,
+    "reasons": [],
+    "execution": {
+      "passed": true,
+      "reasons": []
+    },
+    "quality": {
+      "passed": true,
+      "reasons": [],
+      "components": {
+        "domain_metrics": {
+          "passed": true,
+          "reasons": []
+        },
+        "sql_slice_metrics": {
+          "passed": true,
+          "reasons": []
+        },
+        "sql_heldout_metrics": {
+          "passed": true,
+          "reasons": []
+        },
+        "file_dynamic_policy_metrics": {
+          "passed": true,
+          "reasons": []
+        }
+      }
+    }
+  },
+  "thresholds_file": "backend\\data\\benchmarks\\thresholds\\default_thresholds.json",
+  "baseline_file": "backend\\data\\benchmarks\\baselines\\phase2_baseline_latest.json",
+  "baseline_present": true,
+  "weaknesses": [
+    "file: small corpus size (77 rows).",
+    "file: high synthetic/weaklabel ratio (100.0%)."
+  ]
+}
