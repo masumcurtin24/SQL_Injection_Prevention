@@ -29,10 +29,6 @@ output/
 **/.ipynb_checkpoints/
 tools/cloudflared.exe
 tools/generate_*.py
-/.dockerignore
-/Dockerfile.backend
-/Dockerfile.frontend
-/docker-compose.yml
 /package-lock.json
 .DS_Store
 backend/yara_rules/staging/*

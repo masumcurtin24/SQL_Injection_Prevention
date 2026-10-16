@@ -1,0 +1,58 @@
+name: sql-injection-prevention
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    environment:
+      DATABASE_URL: sqlite:////app/runtime/sql_app.db
+      JWT_SECRET_KEY: "${JWT_SECRET_KEY:?Set JWT_SECRET_KEY in .env (at least 32 characters)}"
+      BOOTSTRAP_ADMIN_EMAIL: "${BOOTSTRAP_ADMIN_EMAIL:?Set BOOTSTRAP_ADMIN_EMAIL in .env}"
+      BOOTSTRAP_ADMIN_PASSWORD: "${BOOTSTRAP_ADMIN_PASSWORD:?Set BOOTSTRAP_ADMIN_PASSWORD in .env}"
+      CORS_ORIGINS: "${CORS_ORIGINS:-http://localhost:3000}"
+      SQL_ENFORCEMENT_MODE: "${SQL_ENFORCEMENT_MODE:-monitor}"
+      FILE_SCAN_QUEUE_BACKEND: "${FILE_SCAN_QUEUE_BACKEND:-memory}"
+      FILE_SCAN_QUEUE_PROCESSOR_ENABLED: "${FILE_SCAN_QUEUE_PROCESSOR_ENABLED:-true}"
+    init: true
+    restart: unless-stopped
+    volumes:
+      - backend-runtime:/app/runtime
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready', timeout=4)"
+      interval: 15s
+      timeout: 5s
+      start_period: 60s
+      retries: 20
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+      args:
+        VITE_API_BASE_URL: /api/v1
+    depends_on:
+      backend:
+        condition: service_healthy
+    init: true
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-3000}:8080"
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - --quiet
+        - --output-document=-
+        - http://127.0.0.1:8080/healthz
+      interval: 15s
+      timeout: 5s
+      start_period: 10s
+      retries: 5
+
+volumes:
+  backend-runtime:

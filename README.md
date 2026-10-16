@@ -29,6 +29,7 @@ The prototype does not claim full enterprise deployment, durable quarantine, rea
 | Data access | SQLAlchemy, Alembic | Database models and schema migrations |
 | Storage | SQLite by default | Local development and demonstration database |
 | Security analysis | Python services, scikit-learn/joblib models, YARA rules | SQL, file, and spam/phishing analysis |
+| Containers | Docker Compose, Nginx | Reproducible frontend/backend deployment |
 | Testing | Pytest, benchmark scripts, frontend build checks | Regression and validation evidence |
 
 ## Repository Structure
@@ -46,6 +47,10 @@ The prototype does not claim full enterprise deployment, durable quarantine, rea
 |   `-- alembic/              Database migrations
 |-- frontend/
 |   `-- src/                  React application pages, components, hooks, and API client
+|-- docker/                   Nginx reverse-proxy configuration
+|-- Dockerfile.backend        FastAPI runtime image
+|-- Dockerfile.frontend       React build and Nginx runtime image
+|-- docker-compose.yml        Full-stack local container deployment
 |-- integration/              DVWA and external integration helpers
 |-- tools/                    Utility scripts for lab integration
 |-- docs/                     Benchmark, scoring, and governance notes
@@ -90,7 +95,41 @@ The prototype does not claim full enterprise deployment, durable quarantine, rea
 - Python 3.13 or later.
 - Node.js 20 or later.
 - PowerShell, Command Prompt, or a Unix-like terminal.
-- Optional: Docker, if using the DVWA lab.
+- Docker Desktop or Docker Engine with Compose, if using the container setup.
+
+### Docker Setup
+
+The root Compose file builds the React frontend and FastAPI backend, runs database migrations, stores the SQLite database in a named volume, and serves the application through Nginx on one port.
+
+Create a local environment file:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Replace `BOOTSTRAP_ADMIN_PASSWORD` and `JWT_SECRET_KEY` in `.env` before starting. The JWT secret must contain at least 32 characters. A strong value can be generated with:
+
+```powershell
+python -c "import secrets; print(secrets.token_urlsafe(48))"
+```
+
+Build and start the stack:
+
+```powershell
+docker compose up --build --detach
+docker compose ps
+```
+
+Open the application at `http://localhost:3000`. The backend health endpoint is available through the same origin at `http://localhost:3000/health/ready`; API and WebSocket traffic is proxied internally to the backend container.
+
+View logs or stop the stack with:
+
+```powershell
+docker compose logs --follow
+docker compose down
+```
+
+The `backend-runtime` volume retains the SQLite database across ordinary container restarts and `docker compose down`.
 
 ### Backend Setup
 
@@ -257,7 +296,7 @@ Start the lab from that folder:
 docker compose up --build
 ```
 
-The DVWA lab is for controlled local testing only. It must not be used for unauthorised testing against external systems.
+The DVWA lab is an experimental integration scaffold and still requires local instrumentation and authenticated analyzer requests. It is separate from the supported root full-stack Compose setup. DVWA is intentionally vulnerable: run it only in an isolated local lab, never expose it publicly, and never use it for unauthorised testing against external systems.
 
 ## Known Limitations
 
